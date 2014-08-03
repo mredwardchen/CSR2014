@@ -18,9 +18,9 @@ var port = process.env.PORT || config.port;
 
 Templar.loadFolder(config.templates);
 
-router.addRoute('/*', require('./routes/static.js'));
+router.addRoute('/subscription', require('./routes/subscription.js'));
 router.addRoute('/', require('./routes/csrhome.js'));
-
+router.addRoute('/*', require('./routes/static.js'));
 
 http.createServer(function (req, res) {
   res.error = ErrorPage(req, res, {

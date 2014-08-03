@@ -34,20 +34,20 @@ function handleDisconnect() {
     });
 }
 
-handleDisconnect();
+//handleDisconnect();
 
 var mount = st(process.cwd()+'/www');
 
 module.exports = function (req, res) {
-  if (req.url === '/users') {
-      connection.query('SELECT * from t_users', function(err, rows, fields) {
-          if (err) {
-              console.log('error: ', err);
-              throw err;
-          }
-          res.template('users.ejs', { title: 'Node.js Website Template', rows: rows});
-      });
-  } else {
+//  if (req.url === '/users') {
+//      connection.query('SELECT * from t_users', function(err, rows, fields) {
+//          if (err) {
+//              console.log('error: ', err);
+//              throw err;
+//          }
+//          res.template('users.ejs', { title: 'Node.js Website Template', rows: rows});
+//      });
+//  } else {
     if (!mount(req, res)) return res.error(404)
-  }
+//  }
 };
