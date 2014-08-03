@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= title %></title>
+  <meta content="Node Website Template" name="description">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" name="viewport">
+
+  <link href="public/images/favicon.ico" rel="shortcut icon">
+  <link href="public/css/app.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Node.js Website Template</h1>
+
+  <a href="https://github.com/oren/node-website-template">Github Repo</a>
+
+  <h3>Design Philosophy:</h3>
+
+  <p>(inspired by <a href="https://github.com/isaacs/npm-www">isaacs</a>)</p>
+
+  <ul>
+    <li>
+      <p>No frameworks</p>
+      <p>Everything is done using small, simple, standalone modules that work with vanilla Node.js http servers. Also no test frameworks or control flow library.</p>
+    </li>
+    <li>
+      <p>Unceremonious MVC</p>
+      <p>No big MVC class heirarchy.  Just have the route handler get some data, then hand it off to a template.  Simpler is better.</p>
+    </li>
+    <li>
+      <p>Ridiculous speed</p>
+      <p>This site should be surprisingly fast.  Towards that end, things are cached and served from memory whenever possible, and ETagged for browser-cacheablility.</p>
+    </li>
+    <li>
+      <p>Small Modules</p>
+      <p>No single JavaScript file should be more than about 200 lines.  If it is, then that's a sign that it should be split up.</p> </li>
+    <li>
+      <p>DRY Dependencies</p>
+      <p>If multiple different routes all have to keep doing the same thing, then they should either be the same route, or the repeated bits belong in a dependency.</p> </li>
+    <li>
+      <p>No lib folder</p>
+      <p>If you would put it in <code>lib/</code>, then it belongs in a separate module.</p>
+    </li>
+  </ul>
+
+  <% include contact-partial %></li>
+
+  <script src="public/js/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+#!/bin/bash
+set -u
+
+# script for restarting the server. usualy after deploy
+
+shared=/home/oren/projects/shared
+app=/home/oren/projects/node-website-template
+
+test -d "$shared" || mkdir -p $shared
+
+./node_modules/.bin/forever stop server.js
+rm -r $shared/forever.log
+
+cd $app
+./node_modules/.bin/forever start --pidFile $shared/server.pid -l $shared/forever.log -o $shared/server.log -e $shared/server.log server.js
+

@@ -1,0 +1,50 @@
+{
+  "name": "csr-2014-website",
+  "version": "0.0.0",
+  "description": "CSR 2014 website revamp",
+  "main": "router.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "./node_modules/browserify/bin/cmd.js --debug public/js/app.js > public/js/bundle.js",
+    "start": "npm run build && ./node_modules/node-dev/bin/node-dev server.js",
+    "watchify": "./node_modules/watchify/bin/cmd.js --debug public/js/app.js -o public/js/bundle.js",
+    "style": "./node_modules/stylus/bin/stylus -c public/css/app.styl",
+    "test": "node_modules/tape/bin/tape test/client/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mredwardchen/CSR2014.git"
+  },
+  "author": "",
+  "license": "",
+  "readmeFilename": "Readme.md",
+  "gitHead": "4da102a011e51e3415a65db118b52587c3415d1d",
+  "dependencies": {
+    "error-page": "0.0.6",
+    "routes": "~0.2.0",
+    "ejs": "~0.8.4",
+    "templar": "~0.2.2",
+    "st": "~0.2.5",
+    "forever": "~0.10.11",
+    "node-dev": "~2.3.0",
+    "stylus": "~0.47.3",
+    "tape": "~2.13.4",
+    "browserify": "~5.9.1",
+    "watchify": "~1.0.1",
+    "logfmt": "~1.1.2",
+    "express": "~4.7.2",
+    "mysql": "~2.4.1"
+  },
+  "devDependencies": {
+    "tape": "~1.0.2",
+    "browserify": "~2.14.2",
+    "stylus": "~0.32.1",
+    "watchify": "~0.3.0",
+    "node-dev": "~2.0.2"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
