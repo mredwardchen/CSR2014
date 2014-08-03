@@ -36,7 +36,7 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-var mount = st(process.cwd());
+var mount = st(process.cwd()+'/www');
 
 module.exports = function (req, res) {
   if (req.url === '/users') {
