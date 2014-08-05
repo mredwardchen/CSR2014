@@ -6,13 +6,167 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" name="viewport">
-
     <link href="public/images/favicon.ico" rel="shortcut icon">
     <link href="public/css/app.css" rel="stylesheet">
 </head>
-
 <body>
 
+<div id="main-content-center">
+
+<style type="text/css">
+    .formField {
+        border: 1px solid #AAAAAA;
+    }
+
+    .a_country {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    function subscribe() {
+        var errors = false;
+
+        // clear error alerts
+        $(".formField").each(function () {
+            $(this).css({border: '1px solid #AAAAAA' });
+            $(this).css({backgroundColor: '#FFFFFF' });
+        });
+
+        $(".formField + span").each(function () {
+            $(this).text('');
+        });
+
+        $("#errorNotify").html('');
+
+        // check for blank fields
+        if ($("#F_04").val() == '') {
+            $("#F_04").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#a_country").val() == '') {
+            $("#a_country").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#a_first_name").val() == '') {
+            $("#a_first_name").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_last_name").val() == '') {
+            $("#a_last_name").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_title").val() == '') {
+            $("#a_title").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_company").val() == '') {
+            $("#a_company").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_address_1").val() == '') {
+            $("#a_address_1").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_city").val() == '') {
+            $("#a_city").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_state").val() == '' && ( $("#a_country").val() == 'UNITED STATES' || $("#a_country").val() == 'CANADA' )) {
+            $("#a_state").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#a_province").val() == '' && $("#a_country").val() != 'UNITED STATES' && $("#a_country").val() != 'CANADA') {
+            $("#a_province").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_zip").val() == '') {
+            $("#a_zip").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#a_phone").val() == '') {
+            $("#a_phone").css({border: '2px solid red'});
+            errors = true;
+        }
+
+        if ($("#F_03").val() == '') {
+            $("#F_03").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#F_06").val() == '') {
+            $("#F_06").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#F_05").val() == '') {
+            $("#F_05").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#F_07").val() == '') {
+            $("#F_07").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#F_14").val() == '') {
+            $("#F_14").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if ($("#F_15").val() == '') {
+            $("#F_15").css({backgroundColor: 'red'});
+            errors = true;
+        }
+
+        if (validateEmail($("#a_email").val()) == false) {
+            $("#a_email").css({border: '2px solid red'});
+            if ($("#a_email").val() != '') $("#a_email + span").text('Invalid Email');
+            errors = true;
+        }
+
+        if (countryCheck() == true) errors = true;
+
+        if (!errors) {
+            $("#subscribeForm").submit();
+        } else {
+            $("#errorNotify").html('Please correct the errors above');
+        }
+    }
+
+    function countryCheck() {
+        $("#a_country + span").html('');
+        if ($("#a_country").val() != 'UNITED STATES' && $("#a_country").val() != 'CANADA' && $("#a_country").val() != '') {
+            // show different address type
+            $('.a_country').show();
+            $('.a_country_us').hide();
+            // notify about subscription
+            if ($("#F_04").val() == 'Print Version' || $("#F_04").val() == 'Both') {
+                $("#a_country + span").html('<br /><span style="color:red">International subcribers please email <a href="subs@chipscalereview.com" class="link">subs@chipscalereview.com</a> for a paid subscription</span>');
+                return true;
+            }
+        } else {
+            $('.a_country').hide();
+            $('.a_country_us').show();
+        }
+    }
+
+    function validateEmail(email) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        return reg.test(email);
+    }
+</script>
+<div style="margin:10px;">
 <form id="subscribeForm" method="post" action="/subscription/subscribe.php">
 <input type="hidden" name="action" value="subscribe">
 <table width="100%" border="0" cellpadding="0" cellspacing="2">
@@ -632,5 +786,9 @@
     <input type="button" value="Subscribe to Chip Scale Review" onclick="subscribe();">
 </div>
 </form>
+</div>
+</div>
+
+
 </body>
 </html>
