@@ -12,12 +12,7 @@ function subscription (req, res, config) {
            console.log('error');
         });
         req.on('end', function() {
-            console.log('there will be no more data.');
-        });
-        req.on('readable', function() {
-            while (null !== (chunk = req.read())) {
-                console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
-            }
+            console.log('there will be no more data. Sending email.');
             var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'w7y2ublh', process.env.SENDGRID_PASSWORD || 'app28001807@heroku.com');
             sendgrid.send({
                 to:       ['feisajan@yahoo.com','mredwardchen@hotmail.com'],
@@ -29,6 +24,11 @@ function subscription (req, res, config) {
                 console.log(json);
                 res.template('subscriptionSent.ejs', {});
             });
+        });
+        req.on('readable', function() {
+            while (null !== (chunk = req.read())) {
+                console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
+            }
         });
 
     }
