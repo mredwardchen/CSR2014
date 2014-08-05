@@ -27,9 +27,8 @@ function subscription (req, res, config) {
             }, function(err, json) {
                 if (err) { console.error(err); }
                 console.log(json);
+                res.template('subscriptionSent.ejs', {});
             });
-
-            res.template('subscriptionSent.ejs', {});
         });
 
     }
