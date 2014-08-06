@@ -31,7 +31,7 @@ function subscription (req, res, config) {
             while (null !== (chunk = req.read())) {
                 console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
                 var params = queryString.parse(chunk.toString());
-                console.log('form params: %s', handleParams(params));
+                console.log('subscriber params: %s', handleParams(params));
                 var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'w7y2ublh', process.env.SENDGRID_PASSWORD || 'app28001807@heroku.com');
                 sendgrid.send({
                     to:       ['feisajan@yahoo.com','mredwardchen@hotmail.com'],
@@ -40,8 +40,7 @@ function subscription (req, res, config) {
                     text:     'New subscriber data:'+params.toString()
                 }, function(err, json) {
                     if (err) { console.error(err); }
-                    console.log(json);
-                    res.template('subscriptionSent.ejs', {});
+                    res.template('subscriptionSent.ejs', {'params': params});
                 });
             }
         });
