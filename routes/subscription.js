@@ -2,7 +2,12 @@
 
 module.exports = subscription;
 
-var queryString = require('querystring')
+var queryString = require('querystring');
+var EJS = require('ejs');
+var fs = require('fs');
+var path = __dirname + '/../templates/subscriptionEmailBody.ejs';
+var emailTemplate = fs.readFileSync(path, 'utf8');
+
 
 function subscription (req, res, config) {
     var params = [
@@ -36,16 +41,16 @@ function subscription (req, res, config) {
         // update values from form to key array
         for (var i=0; i<params.length; i++) {
             params[i].value = p[params[i].key];
-            console.log('%s set to %s',params[i].key, params[i].value);
+            //console.log('%s set to %s',params[i].key, params[i].value);
         }
     }
 
     function toEmailBody(p) {
         var data = params || p;
 
-        var text = new EJS({url: '../templates/subscriptionEmailBody.ejs'}).render({'data': data});
-
-        console.log('Email body: %s', text);
+        var text = EJS.render(emailTemplate, {data: data, debug: false, filename: path});
+//
+        console.log('Email: %s', text);
 
         return text;
     }
@@ -63,13 +68,12 @@ function subscription (req, res, config) {
                 console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
                 var p = queryString.parse(chunk.toString());
                 processParams(p);
-
                 var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'w7y2ublh', process.env.SENDGRID_PASSWORD || 'app28001807@heroku.com');
                 sendgrid.send({
                     to:       ['feisajan@yahoo.com','mredwardchen@hotmail.com'],
                     from:     'csr2014@xinnamonj.com',
                     subject:  'CSR new subscriber notice',
-                    text:     'New subscriber data:' + toEmailBody(params)
+                    text:     toEmailBody(params)
                 }, function(err, json) {
                     if (err) { console.error(err); }
                     res.template('subscriptionSent.ejs', {'params': params});
