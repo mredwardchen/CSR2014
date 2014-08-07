@@ -5,9 +5,8 @@ module.exports = subscription;
 var queryString = require('querystring');
 var EJS = require('ejs');
 var fs = require('fs');
-var path = __dirname + '/../templates/subscriptionEmailBody.ejs';
+var path = __dirname + '/../templates/subscription/noticeEmail.ejs';
 var emailTemplate = fs.readFileSync(path, 'utf8');
-
 
 function subscription (req, res, config) {
     var params = [
@@ -18,11 +17,10 @@ function subscription (req, res, config) {
         {'title': 'Company', 'key': 'a_company'},
         {'title': 'Address', 'key': 'a_address_1'},
         {'title': '', 'key': 'a_address_2'},
-        {'title': '', 'key': 'a_address_2'},
         {'title': 'City', 'key': 'a_city'},
         {'title': 'State', 'key': 'a_state'},
         {'title': 'Zip/Postal Code', 'key': 'a_zip'},
-        {'title': 'Country', 'key': 'a_province'},
+        {'title': 'Country', 'key': 'a_country'},
         {'title': 'Email', 'key': 'a_email'},
         {'title': 'Phone', 'key': 'a_phone'},
         {'title': 'Fax', 'key': 'a_fax'},
@@ -37,19 +35,17 @@ function subscription (req, res, config) {
         {'title': '07. May we contact you by email about your subscription?', 'key': 'F_08'}
     ];
 
+
     function processParams(p) {
         // update values from form to key array
         for (var i=0; i<params.length; i++) {
-            params[i].value = p[params[i].key];
-            //console.log('%s set to %s',params[i].key, params[i].value);
+            params[i].value = p[params[i].key] || '';
         }
     }
 
     function toEmailBody(p) {
         var data = params || p;
-
         var text = EJS.render(emailTemplate, {data: data, debug: false, filename: path});
-//
         console.log('Email: %s', text);
 
         return text;
@@ -76,11 +72,10 @@ function subscription (req, res, config) {
                     text:     toEmailBody(params)
                 }, function(err, json) {
                     if (err) { console.error(err); }
-                    res.template('subscriptionSent.ejs', {'params': params});
+                    res.template('subscription/feedback.ejs', {'data': params});
                 });
             }
         });
-
     }
 
     switch (req.method) {
@@ -89,7 +84,7 @@ function subscription (req, res, config) {
             break;
 
         case 'GET':
-            res.template('subscription.ejs', {});
+            res.template('subscription/signup.ejs', {});
 
     }
 };

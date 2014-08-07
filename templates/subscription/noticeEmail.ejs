@@ -1,0 +1,7 @@
+
+<% var d = new Date() %>
+You received a new Chip Scale Review subscriber at <%= d.toLocaleDateString() %> <%= d.toLocaleTimeString() %>
+
+<% for (var i=0; i< data.length; i++) { %>
+    <%= data[i]['title'] %><% if (i !== 6 && i !== 7) { %>:<% } %> <%= data[i]['value'] %>
+<% } %>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>Chip Scale Review Magazine : Subscription</title>
+    <meta content="New subscription notice" name="description">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" name="viewport">
+    <!--<link href="../public/images/favicon.ico" rel="shortcut icon">-->
+    <!--<link href="../public/css/app.css" rel="stylesheet">-->
+</head>
+<body>
+
+<h1>Thank you for your subscription!</h1>
+
+<ul>
+    <% for (var i=0; i< data.length; i++) { %>
+    <li><%= data[i]['title'] %>
+    <% if (i !== 6 && i !== 7) { %>
+:
+    <% } %>
+<%= data[i]['value'] %>
+    <% } %>
+    </li>
+</ul>
+
+</body>
+</html>
