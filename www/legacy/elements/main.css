@@ -1,0 +1,505 @@
+/* CSS Document */
+
+HTML, BODY {
+	background-color:#404040;
+	background-image:url(main-back.jpg);
+	background-repeat:repeat-x;
+	font-family:"Trebuchet MS", Arial;
+	font-size:12px;
+	color:#FFFFFF;
+	margin:0;
+}
+
+img, div { behavior: url(iepngfix.htc) }
+
+#main-front {
+	width:992px;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:#000000;
+	background-image:url(main-content-back.gif);
+	background-repeat:repeat-y;
+	margin-top:10px;
+	border:1px solid #b5b5b5;
+	padding-left:11px;
+}
+
+#main-front-header {
+	width:991px;
+	height:135px;
+	background-image:url(main-csr-header.jpg);
+	position:relative;
+}
+
+#main-front-header div {
+	position:absolute;
+	top:0;
+	left:540px;
+	margin:10px;
+	font-style:italic;
+	line-height:150%;
+}
+
+#main-front-issue {
+	position:relative;
+	height:234px;
+	background-image:url(current.jpg);
+}
+
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+#main-front-issue #copy {
+	position:absolute;
+	top:10px;
+	left:40px;
+}
+
+#main-front-issue .button {
+	float:left;
+	margin:3px;
+	margin-top:10px;
+	text-align:center;
+	line-height:38px;
+	height:38px;
+	width:176px;
+	background-image:url(button.png);
+	cursor:pointer;
+	font-size:18px;
+}
+
+#main-front-issue .button:HOVER, #tech-monthly .button:HOVER {
+	background-position:bottom;
+}
+
+#main-front-issue div ul {
+	margin:0;	
+}
+
+#main-front-issue div ul li {
+	list-style-image: url(bullet.png);
+	font-size:14px;
+	color:#FFFFFF;
+	line-height:18px;
+	
+}
+
+#main-front-tab-bar {
+	height:29px;
+}
+
+
+#main-content {
+	background-image:url(hback.gif);
+	background-repeat:repeat-y;
+	width:992px;
+}
+
+#main-content-content {
+	background-image:url(hback-content.gif);
+	background-repeat:repeat-y;
+	width:992px;
+	color:#000;
+}
+
+#main-content-left {
+	float:left;
+	width:140px;
+	border-top:1px solid #b5b5b5;
+	text-align:center;
+}
+
+#main-content-center {
+	float:left;
+	width:572px;
+	padding:10px;
+	border-top:1px solid #b5b5b5;
+}
+
+#main-content-right {
+	float:left;
+	width:260px;
+	border-top:1px solid #b5b5b5;
+	text-align:center;
+}
+
+#main-content-left div, #main-content-right div {
+	margin:10px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#copyright {
+	text-align:center;
+	color:#999999;
+	font-size:10px;
+	line-height:20px;
+}
+
+.button {
+	color:#FFF;
+}
+
+.gold-color {
+	color:#e3a838;
+}
+
+
+
+/*********************** tabs ***********************/
+
+#main-front-nav, #main-front-nav ul {
+	float: right;
+	list-style: none;
+	line-height: 29px;
+	padding: 0;
+	margin: 0;
+	white-space:nowrap;
+	height: 29px;
+}
+
+#main-front-nav a {
+	font-weight: bold;
+	display: block;
+	color: #bfbfbf;
+	text-decoration: none;
+	margin-left:10px;
+	margin-right:10px;
+	outline: none;
+}
+
+#main-front-nav li {
+	float: left;
+	padding: 0;
+}
+
+#main-front-nav li ul {
+	position: absolute;
+	left: -999em;
+	height: auto;
+	width: 400px;
+	font-weight: normal;
+	border-width: 1px;
+	margin-top: 0;
+	z-index:10;
+	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.90);
+}
+
+#main-front-nav li ul li {
+	width: 400px;
+}
+
+#main-front-nav li li {
+	width: 400px;
+	padding:0;
+	background-color:#6C6C6C;
+	border:1px solid #7c7c7c;
+}
+
+#main-front-nav li ul a {
+	width: 13em;
+	color: #ffdc62;
+	display:block;
+}
+
+#main-front-nav li:hover ul, #main-front-nav li li:hover ul, #main-front-nav li li li:hover ul, #main-front-nav li.sfhover ul, #main-front-nav li li.sfhover ul, #main-front-nav li li li.sfhover ul {
+	left: auto;
+}
+
+#main-front-nav li:hover, #main-front-nav li.sfhover {
+	background-color: #4a4a4a;
+}
+
+/*********************** end tabs ***********************/
+/*********************** content ***********************/
+
+#login-status {
+	 margin:15px 0 10px 15px;
+}
+
+#issue_box {
+	position:relative;
+	top:0;
+	left:0;
+	height:165px;
+	width:554px;
+	margin:0 15px 15px 13px; 
+	background-color:#FFFFFF;
+	background-image:url(issue_box.gif);
+	
+}
+
+#mwr-title-box, #issue-featured-box, #issue-toc-box {
+	position:relative;
+	top:5px;
+	left:0;
+	width:100%;
+	height:24px;
+	border-top:1px solid #CCCCCC; 
+	border-bottom:1px solid #CCCCCC;
+	line-height:24px;
+	font-weight:bold;
+	font-style:italic;
+	color: #3c46a7;
+	font-size:14px;
+}
+
+.mwr-article {
+	position:relative;
+	top:24px;
+	left:0;
+	margin-bottom:20px;
+}
+
+.mwr-title, .toc-title { 
+	font-size:14px;
+	font-weight:bold; 
+	color:#3c46a7;
+	cursor:pointer;
+}
+
+.mwr-title span {
+	font-size:10px;
+	font-weight:normal;
+}
+
+.mwr-copy, .mwr-copy p { 
+	margin-top:0;
+	font-size:12px;
+	line-height:150%;
+}
+
+/**************** legacy *********************/
+
+A			{ text-decoration: none; color: #000000;}
+.subtitle  		{ font-size: 10pt; font-style: normal; font-weight: bold;line-height: normal; color: #3C46A7; font-family: Arial, Helvetica, sans-serif; }
+/* P,DIV			{ font-size: 9pt; font-style: normal; line-height: normal; font-weight: normal; color: #000000; font-family: Arial, Helvetica, sans-serif} */
+.text  		{ font-size: 9pt; font-style: normal; line-height: normal; font-weight: normal; color: #000000; font-family: Arial, Helvetica, sans-serif}
+.title 			{ font-family: Arial; font-size: 18px; font-style: italic; line-height: normal; font-weight: bold; color: #3C46A7; text-decoration: none;}
+.toctitle 		{ font-family: Georgia, "Times New Roman", Times, serif; font-size: 11px; font-style: normal; line-height: normal; font-weight: bold; color: #F47D06; text-decoration: none; margin-left: 5}
+.toctext		{ font-size: 9pt; font-style: normal; line-height: normal; font-weight: normal; color: #000000; font-family: Arial, Helvetica, sans-serif; margin-bottom: 10px;}
+.boldtext 		{ font-size: 9pt; font-style: normal; line-height: normal; font-weight: bold; color: #000000; font-family: Arial, Helvetica, sans-serif}
+.pageHighlight	{ font-size: 10pt; font-style: italic; font-weight: bold; text-align: center; line-height: normal; color: #3C46A7; font-family: Arial, Helvetica, sans-serif; }
+.link			{ font-size: 9pt; font-style: normal; line-height: normal; font-weight: normal; color: #3C46A7; font-family: Arial, Helvetica, sans-serif}
+A.link			{ color: #3C46A7; text-decoration: none; }
+
+.a_header 		{ font-family: Arial, Helvetica; font-size: 18px; font-style: italic; font-weight: bold; color: #3C46A7; text-decoration: none;}
+.a_title 		{ font-family: Arial, Helvetica; font-size: 14px; font-style: normal; font-weight: bold; color: #3C46A7; text-decoration: none;}
+.toc_title		{ font-family: Arial, Helvetica; font-size: 12px; font-style: italic; font-weight: bold; color: #3B3C9D; text-decoration: none;}
+.cover_a		{ font-family: Arial, Helvetica; font-size: 13px; font-style: normal; font-weight: bold; color: #000000; text-decoration: none;}
+.caption		{ font-family: Arial, Helvetica; font-size: 10px; font-style: normal; color: #000000; text-decoration: none;}
+
+.outline		{ border: 1px solid #3C46A7; }
+.hl_table		{ font-size: 9pt; color: #3C46A7; font-family: Arial, Helvetica, sans-serif; font-style: italic }
+
+.i_title		{ font-family: Arial, Helvetica; font-size: 14px; font-weight: bold; color: #3C46A7; }
+.i_td			{ font-family: Arial, Helvetica; font-size: 9px;  color: #000000; text-decoration: none; border-top: 1px solid #3C46A7; }
+.a_tab			{	border-top: 1px solid #3C46A7;
+					border-right: 1px solid #3C46A7;
+					border-bottom: 1px solid #3C46A7;
+					background-color:#CFD5E9;
+					padding-left: 10px;
+					padding-right: 10px;
+					padding-top: 3px;
+					padding-bottom: 3px; 
+					color: #3C46A7; }
+			
+.a_sel_tab		{	border-top: 1px solid #3C46A7;
+					border-right: 1px solid #3C46A7;
+					background-color:#FFFFFF;
+					padding-left: 10px;
+					padding-right: 10px;
+					padding-top: 3px;
+					padding-bottom: 3px; 
+					color: #3C46A7; }
+					
+.archive_table	{	
+					background-color:#FFFFFF;
+					padding-left: 10px;
+					padding-right: 10px;
+					padding-top: 3px;
+					padding-bottom: 3px; 
+					color: #000000; }
+
+#ticker {
+	width:240px;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid #CCC;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+.ticker-head {
+	vertical-align:bottom;
+	font-size:.9em;
+	color:#FF0;
+}
+
+.ticker-footer {
+	text-align:center;
+	font-size:11px;
+	color:#FFF;
+}
+
+.ticker-title {
+	font-weight:bold;
+	color: #E3A838;
+	font-size:1.3em;
+}
+
+#ticker TD {
+	border-top:1px solid #CCC;
+}
+
+
+.ticker-symbol, .ticker-name {
+	text-align:left;
+	color: #FFF;
+	font-size:11px;
+}
+
+.ticker-price {
+	text-align:center;
+	color: #FFF;
+}
+
+.ticker-pctDown {
+	color:#F00;
+	text-align:center;
+}
+
+.ticker-pctUp {
+	color:#0F0;
+	text-align:center;
+}
+
+/******************* tech monthly ******************************/
+
+#tech-monthly-content > .head-shot {
+	float:left;
+	border: 1px solid #3C46A7;
+	margin:5px;
+}
+
+#tech-monthly .button {
+	float:right;
+	margin:3px;
+	margin-top:10px;
+	text-align:center;
+	line-height:38px;
+	height:38px;
+	width:212px;
+	background-image:url(button-212.png);
+	cursor:pointer;
+	font-size:18px;
+}
+
+#front-article .title {
+	font-size:1.5em;
+	font-weight:bold;
+	font-style:normal;
+	color:#e3a838;
+}
+
+#front-article b {
+	font-weight: bold;
+}
+
+#front-article A {
+	color:#e3a838;
+	text-decoration:underline;
+}
+
+#front-article IMG {
+	border: 1px solid #999;
+}
+
+#tech-monthly > .head-shot {
+	float:left;
+	margin:5px;
+}
+
+.tech-monthly-img {
+	text-align:center;
+	margin:5px;
+}
+
+.editorial-bio {
+	margin: 20px;
+}
+
+.editorial-bio div {
+	float: left;
+	margin-right: 20px;
+}
+
+.editorial-img {
+	border: 1px solid black;
+}
+
+.editorial-logo {
+
+}
+
+.editorial-description h2 {
+	margin-top: -5px;
+}
+
+.published-table {
+	border-spacing:0;
+    border-collapse:collapse;
+	width: 100%;
+}
+
+.published-table td {
+	border-top: 1px solid #999;
+	vertical-align:top
+}
+
+.iwlpc .section-title {
+	font-size: 16px;
+	border-bottom: 1px solid #3C46A7;
+	margin-bottom: 10px;
+	margin-left: -20px;
+	color: #3C46A7;
+	font-weight: bold;
+}
+
+.iwlpc .section {
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.iwlpc .section .title {
+	font-size: 14px;
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.iwlpc .divider {
+	border-bottom: 1px solid black;	
+	margin-bottom: 10px;
+}
+
+.iwlpc .headshot {
+	display: inline-block;
+	width: 170px;
+	text-align: center;
+	margin: 10px 0;
+}
+
+.iwlpc .headshot img {
+	width: 92px;
+	height: 112px;
+}
+
+.iwlpc .sponsor {
+	display: inline-block;
+	margin: 5px;	
+}

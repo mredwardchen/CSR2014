@@ -36,7 +36,8 @@
     "logfmt": "~1.1.2",
     "express": "~4.7.2",
     "mysql": "~2.4.1",
-    "sendgrid": "1.0.4"
+    "sendgrid": "1.0.4",
+    "querystring": "*"
   },
   "devDependencies": {
     "tape": "~1.0.2",
