@@ -2,52 +2,45 @@
 
 // npm packages
 var st = require('st')
-var mysql = require('mysql');
-var db_config = {
-    host: 'us-cdbr-iron-east-01.cleardb.net',
-    user: 'bd4a95664b8a91',
-    password: '523b14e9',
-    database: 'heroku_5431c85de1f5cac'
-};
+var EJS = require('ejs');
+var fs = require('fs');
+var headerPath = __dirname + '/../templates/layout/header.ejs';
+var footerPath = __dirname + '/../templates/layout/footer.ejs';
+var scriptsPath = __dirname + '/../templates/layout/scripts.ejs';
+var cssPath = __dirname + '/../templates/layout/css.ejs';
+var headerText = fs.readFileSync(headerPath, 'utf8');
+var footerText = fs.readFileSync(footerPath, 'utf8');
+var scriptText = fs.readFileSync(scriptsPath, 'utf8');
+var cssText = fs.readFileSync(cssPath, 'utf8');
+var mount = st({path: process.cwd()+'/www', index: 'index.html'});
 
-var connection;
-
-function handleDisconnect() {
-    console.log('1. connecting to db:');
-    connection = mysql.createConnection(db_config); // Recreate the connection, since
-    // the old one cannot be reused.
-
-    connection.connect(function(err) {              	// The server is either down
-        if (err) {                                     // or restarting (takes a while sometimes).
-            console.log('2. error when connecting to db:', err);
-            setTimeout(handleDisconnect, 1000); // We introduce a delay before attempting to reconnect,
-        }                                     	// to avoid a hot loop, and to allow our node script to
-    });                                     	// process asynchronous requests in the meantime.
-    // If you're also serving http, display a 503 error.
-    connection.on('error', function(err) {
-        console.log('3. db error', err);
-        if (err.code === 'PROTOCOL_CONNECTION_LOST') { 	// Connection to the MySQL server is usually
-            handleDisconnect();                      	// lost due to either server restart, or a
-        } else {                                      	// connnection idle timeout (the wait_timeout
-            throw err;                                  // server variable configures this)
-        }
-    });
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
-//handleDisconnect();
-
-var mount = st(process.cwd()+'/www');
-
 module.exports = function (req, res) {
-//  if (req.url === '/users') {
-//      connection.query('SELECT * from t_users', function(err, rows, fields) {
-//          if (err) {
-//              console.log('error: ', err);
-//              throw err;
-//          }
-//          res.template('users.ejs', { title: 'Node.js Website Template', rows: rows});
-//      });
-//  } else {
-    if (!mount(req, res)) return res.error(404)
-//  }
+    var htmlPath = '';
+    var htmlTemplate = '';
+    var html = '';
+
+    console.log('req.url:'+req.url);
+
+    if (!req.url || endsWith(req.url, ".html")) {
+        htmlPath = (req.url === '/') ? '/index.html' : req.url;
+        try {
+            htmlTemplate = fs.readFileSync(__dirname + '/../www' + htmlPath, 'utf8');
+
+            html = EJS.render(htmlTemplate, {debug:true, data: {header: headerText, footer: footerText, scripts: scriptText, css: cssText}});
+
+            res.end(html);
+        } catch (err) {
+            res.error(404);
+        }
+
+    } else {
+        // serve static resources
+        if (!mount(req, res)) return res.error(404);
+
+    }
+
 };
