@@ -1269,17 +1269,21 @@ function _toggle() {
 
 /** 22. FeedEk RSS
  **************************************************************** **/
-    $('#divRssPopular').FeedEk({
-        FeedUrl:'http://www.semi.org/en/NewsFeeds/SEMIEvents/index.rss'
-    });
+    if ($('#divRssPopular').length>0) {
+        $('#divRssPopular').FeedEk({
+            FeedUrl:'http://www.semi.org/en/NewsFeeds/SEMIEvents/index.rss'
+        });
+    }
 
-    $('#divRssRecent').FeedEk({
-        FeedUrl:'http://www.minatec.org/mina-news-rss',
-        MaxCount : 5,
-        ShowDesc : true,
-        ShowPubDate:false,
-        DescCharacterLimit:100
-    });
+    if ($('#divRssRecent').length>0) {
+        $('#divRssRecent').FeedEk({
+            FeedUrl:'http://www.minatec.org/mina-news-rss',
+            MaxCount : 5,
+            ShowDesc : true,
+            ShowPubDate:false,
+            DescCharacterLimit:100
+        });
+    }
 
 
 
