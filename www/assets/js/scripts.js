@@ -31,6 +31,7 @@
 	19. Colorpicker
 	20. Bootstrap Slider
 	21. Contact Google Map
+    22. FeedEk RSS
 
 	AFTER RESIZE
 	COUNT TO
@@ -1265,6 +1266,24 @@ function _toggle() {
 	if(jQuery("#gmap").length > 0) {
 		showMap('contactMap');
 	}
+
+/** 22. FeedEk RSS
+ **************************************************************** **/
+    if ($('#divRssPopular').length>0) {
+        $('#divRssPopular').FeedEk({
+            FeedUrl:'http://www.semi.org/en/NewsFeeds/SEMIEvents/index.rss'
+        });
+    }
+
+    if ($('#divRssRecent').length>0) {
+        $('#divRssRecent').FeedEk({
+            FeedUrl:'http://www.minatec.org/mina-news-rss',
+            MaxCount : 5,
+            ShowDesc : true,
+            ShowPubDate:false,
+            DescCharacterLimit:100
+        });
+    }
 
 
 

@@ -19,8 +19,7 @@ var port = process.env.PORT || config.port;
 Templar.loadFolder(config.templates);
 
 router.addRoute('/subscription', require('./routes/subscription.js'));
-router.addRoute('/', require('./routes/csrhome.js'));
-router.addRoute('/*', require('./routes/static.js'));
+router.addRoute('*', require('./routes/static.js'));
 
 http.createServer(function (req, res) {
   res.error = ErrorPage(req, res, {
@@ -28,7 +27,14 @@ http.createServer(function (req, res) {
   });
 
   res.template = Templar(req, res, templarOptions);
-  router.match(req.url).fn(req, res, config);
+
+  var route = router.match(req.url);
+  if (route) {
+    route.fn(req, res, config);
+  } else {
+    console.log('No route found');
+    res.error(404);
+  }
 }).listen(port);
 
 // log
