@@ -1,12 +1,4 @@
 /** ********************************************** **
-	@Author			Dorin Grigoras
-	@Website		www.stepofweb.com
-	@Last Update	Wednesday, June 18, 2014
-
-	NOTE! 	Do not change anything here if you want to
-			be able to update in the future! Please use
-			your custom script (eg. custom.js).
-
 
 	TABLE CONTENTS
 	-------------------------------
@@ -49,13 +41,13 @@
 
 	/* Init */
 	jQuery(window).ready(function () {
-		Epona();
+		init();
 	});
 
 
 /** Core
  **************************************************************** **/
-	function Epona() {
+	function init() {
 		_topNav();
 		_animate();
 		_superslide();
@@ -75,6 +67,8 @@
 		_datepicker();
 		_colorpicker();
 		_bslider();
+        feedEk();
+        highliteTopMenu();
 
 		// Special Actions!
 		if(/(iPad|iPhone|iPod)/g.test( navigator.userAgent )) {
@@ -1269,22 +1263,95 @@ function _toggle() {
 
 /** 22. FeedEk RSS
  **************************************************************** **/
-    if ($('#divRssPopular').length>0) {
-        $('#divRssPopular').FeedEk({
-            FeedUrl:'http://www.semi.org/en/NewsFeeds/SEMIEvents/index.rss'
-        });
+    function feedEk() {
+        if ($('#divRssPopular').length>0) {
+            $('#divRssPopular').FeedEk({
+                FeedUrl:'http://www.semi.org/en/NewsFeeds/SEMIEvents/index.rss'
+            });
+        }
+
+        if ($('#divRssRecent').length>0) {
+            $('#divRssRecent').FeedEk({
+                FeedUrl:'http://www.minatec.org/mina-news-rss',
+                MaxCount : 5,
+                ShowDesc : true,
+                ShowPubDate:false,
+                DescCharacterLimit:100
+            });
+        }
     }
 
-    if ($('#divRssRecent').length>0) {
-        $('#divRssRecent').FeedEk({
-            FeedUrl:'http://www.minatec.org/mina-news-rss',
-            MaxCount : 5,
-            ShowDesc : true,
-            ShowPubDate:false,
-            DescCharacterLimit:100
-        });
-    }
+/**
+ * 23.
+ * Highlite the top main menu item according to selected document
+ */
+    function highliteTopMenu() {
 
+        // get all the links here
+        var links = $('ul#topMain > li');
+        var parent = links[0];
+        var page = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
+            page = page.replace(/#+$/, "");
+
+            //console.log('page:'+page);
+
+            switch (page) {
+                case 'index.html':
+                case 'about.html':
+                case 'advisor.html':
+                case 'terms.html':
+                    parent = links[0];
+                    break;
+
+                case 'empty1.html':
+                case 'issue1407.html':
+                case 'issue1405.html':
+                case 'issue1403.html':
+                case 'issue1401.html':
+                case 'issue1311.html':
+                case 'archive.html':
+                    parent = links[1];
+                    break;
+
+                case 'monthly1407.html':
+                case 'empty2':
+                    parent = links[2];
+                    break;
+
+                case 'calendar.html':
+                    parent = links[3];
+                    break;
+
+                case 'product.html':
+                    parent = links[4];
+                    break;
+
+                case 'subscription':
+                    parent = links[5];
+                    break;
+
+                case 'calendar.html':
+                case 'ad.html':
+                case 'calendar.html':
+                case 'media.html':
+                    parent = links[6];
+                    break;
+
+                case 'contact.html':
+                    parent = links[7];
+                    break;
+
+            }
+
+        $(links).each(function(){
+            if ($(this).hasClass('active'))
+                $(this).removeClass('active');
+        });
+
+        if (parent) {
+            $(parent).addClass('active');
+        }
+    }
 
 
 

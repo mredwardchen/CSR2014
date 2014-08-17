@@ -61,7 +61,7 @@ function subscription (req, res, config) {
         });
         req.on('readable', function() {
             while (null !== (chunk = req.read())) {
-                console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
+                //console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
                 var p = queryString.parse(chunk.toString());
                 processParams(p);
                 var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'w7y2ublh', process.env.SENDGRID_PASSWORD || 'app28001807@heroku.com');
@@ -84,7 +84,7 @@ function subscription (req, res, config) {
             break;
 
         case 'GET':
-            res.template('subscription/signup.ejs', {});
+            res.template('subscription/signup.ejs', config);
 
     }
 };

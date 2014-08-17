@@ -18,7 +18,7 @@ var port = process.env.PORT || config.port;
 
 Templar.loadFolder(config.templates);
 
-router.addRoute('/subscription', require('./routes/subscription.js'));
+//router.addRoute('/subscription', require('./routes/subscription.js'));
 router.addRoute('*', require('./routes/static.js'));
 
 

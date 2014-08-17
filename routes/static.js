@@ -4,6 +4,8 @@
 var st = require('st')
 var EJS = require('ejs');
 var fs = require('fs');
+var subscription = require(__dirname+'/subscription.js');
+
 var headerPath = __dirname + '/../templates/layout/header.ejs';
 var footerPath = __dirname + '/../templates/layout/footer.ejs';
 var scriptsPath = __dirname + '/../templates/layout/scripts.ejs';
@@ -32,19 +34,19 @@ module.exports = function (req, res) {
         try {
             htmlTemplate = fs.readFileSync(__dirname + '/../www' + htmlPath, 'utf8');
 
-            html = EJS.render(htmlTemplate, {debug:true, data: params});
+            html = EJS.render(htmlTemplate, {data: params});
 
             res.end(html);
         } catch (err) {
             errorHandler(req, res, err, params);
         }
-
+    } else if (req.url.indexOf('/subscription') === 0) {
+        subscription(req, res, {data: params});
     } else {
         // serve static resources
         mount(req, res, function() {
             errorHandler(req, res, 404, params);
         })
-
     }
 
 };
