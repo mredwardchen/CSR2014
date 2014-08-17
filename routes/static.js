@@ -12,7 +12,8 @@ var headerText = fs.readFileSync(headerPath, 'utf8');
 var footerText = fs.readFileSync(footerPath, 'utf8');
 var scriptText = fs.readFileSync(scriptsPath, 'utf8');
 var cssText = fs.readFileSync(cssPath, 'utf8');
-var mount = st({path: process.cwd()+'/www', index: 'index.html'});
+var mount = st({path: process.cwd()+'/www', index: 'index.html', passthrough: true});
+var errorHandler = require(__dirname+'/../error-handler.js');
 
 function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
@@ -22,6 +23,7 @@ module.exports = function (req, res) {
     var htmlPath = '';
     var htmlTemplate = '';
     var html = '';
+    var params = {header: headerText, footer: footerText, scripts: scriptText, css: cssText};
 
     console.log('req.url:'+req.url);
 
@@ -30,16 +32,18 @@ module.exports = function (req, res) {
         try {
             htmlTemplate = fs.readFileSync(__dirname + '/../www' + htmlPath, 'utf8');
 
-            html = EJS.render(htmlTemplate, {debug:true, data: {header: headerText, footer: footerText, scripts: scriptText, css: cssText}});
+            html = EJS.render(htmlTemplate, {debug:true, data: params});
 
             res.end(html);
         } catch (err) {
-            res.error(404);
+            errorHandler(req, res, err, params);
         }
 
     } else {
         // serve static resources
-        if (!mount(req, res)) return res.error(404);
+        mount(req, res, function() {
+            errorHandler(req, res, 404, params);
+        })
 
     }
 
