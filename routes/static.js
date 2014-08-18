@@ -36,15 +36,21 @@ module.exports = function (req, res, config) {
     }
 
     if (!req.url || (endsWith(req.url, ".html") || req.url === '/')) {
+
         htmlPath = (req.url === '/') ? '/index.html' : req.url;
-        try {
-            htmlTemplate = fs.readFileSync(__dirname + '/../www' + htmlPath, 'utf8');
 
-            html = EJS.render(htmlTemplate, {data: params});
+        if (htmlPath.indexOf('epona') > -1 && config.name !== 'development') {
+            errorHandler(req, res, 'Not allowed');
+        } else {
+            try {
+                htmlTemplate = fs.readFileSync(__dirname + '/../www' + htmlPath, 'utf8');
 
-            res.end(html);
-        } catch (err) {
-            errorHandler(req, res, err, params);
+                html = EJS.render(htmlTemplate, {data: params});
+
+                res.end(html);
+            } catch (err) {
+                errorHandler(req, res, err, params);
+            }
         }
     } else if (req.url.indexOf('/subscription') === 0) {
         subscription(req, res, {data: params});

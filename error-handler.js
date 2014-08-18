@@ -32,9 +32,9 @@ module.exports = function (req, res, arg, params) {
     }
 
     if (params) {
-        html = EJS.render(errorTemplate, {debug:true, url: req.url, data: params});
+        html = EJS.render(errorTemplate, {debug:false, url: req.url, data: params});
     } else {
-        html = EJS.render(errorTemplate, {debug:true, url: req.url});
+        html = EJS.render(errorLightTemplate, {debug:false, url: req.url});
     }
 
     res.end(html);
