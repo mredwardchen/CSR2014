@@ -4,6 +4,7 @@
 var ejs = require('ejs');
 
 module.exports = {
+  name: 'test',
   port: 5000,
   engine: ejs, 
   templates: __dirname + '/../templates',

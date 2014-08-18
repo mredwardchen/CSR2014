@@ -9,10 +9,12 @@ var subscription = require(__dirname+'/subscription.js');
 var headerPath = __dirname + '/../templates/layout/header.ejs';
 var footerPath = __dirname + '/../templates/layout/footer.ejs';
 var scriptsPath = __dirname + '/../templates/layout/scripts.ejs';
+var scriptsProdPath = __dirname + '/../templates/layout/scripts-prod.ejs';
 var cssPath = __dirname + '/../templates/layout/css.ejs';
 var headerText = fs.readFileSync(headerPath, 'utf8');
 var footerText = fs.readFileSync(footerPath, 'utf8');
 var scriptText = fs.readFileSync(scriptsPath, 'utf8');
+var scriptProdText = fs.readFileSync(scriptsProdPath, 'utf8');
 var cssText = fs.readFileSync(cssPath, 'utf8');
 var mount = st({path: process.cwd()+'/www', index: 'index.html', passthrough: true});
 var errorHandler = require(__dirname+'/../error-handler.js');
@@ -21,15 +23,19 @@ function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
-module.exports = function (req, res) {
+module.exports = function (req, res, config) {
     var htmlPath = '';
     var htmlTemplate = '';
     var html = '';
-    var params = {header: headerText, footer: footerText, scripts: scriptText, css: cssText};
+    var params = (config.name === 'prod') ?
+                     {header: headerText, footer: footerText, scripts: scriptProdText, css: cssText}
+                   : {header: headerText, footer: footerText, scripts: scriptText, css: cssText};
 
-    console.log('req.url:'+req.url);
+    if (config.name === 'development') {
+        console.log('req.url:'+req.url);
+    }
 
-    if (!req.url || endsWith(req.url, ".html")) {
+    if (!req.url || (endsWith(req.url, ".html") || req.url === '/')) {
         htmlPath = (req.url === '/') ? '/index.html' : req.url;
         try {
             htmlTemplate = fs.readFileSync(__dirname + '/../www' + htmlPath, 'utf8');

@@ -21,7 +21,6 @@ Templar.loadFolder(config.templates);
 //router.addRoute('/subscription', require('./routes/subscription.js'));
 router.addRoute('*', require('./routes/static.js'));
 
-
 http.createServer(function (req, res) {
 
   res.template = Templar(req, res, templarOptions);
