@@ -9,7 +9,7 @@
 	z-index:101;
 }
 #footer.bottom {
-	position:absolute;
+	/*position:absolute;*/
 	left:0; right:0;
 	bottom:0;
 }
