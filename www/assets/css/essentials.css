@@ -339,7 +339,7 @@ pre {
 .bold 				{ font-weight:bold !important; 	}
 .fullwidth 			{ width:100% !important; max-width:100% !important; 		}
 .halfwidth 			{ width:50% !important; 		}
-.container			{ position:relative; 			}
+.container			{ position:relative;width:973px; !important; 			}
 i.fa 				{ text-decoration:none !important;}
 .justify 			{ text-align:justify; 			}
 .btn i.fa			{ padding-right:10px; 			}
@@ -2856,7 +2856,9 @@ p.dropcap.color:first-letter {
 .pattern11 {
 	background:url('../images/patterns/pattern11.png') repeat fixed;
 }
-
+.pattern12 {
+    background:url('../images/patterns/pattern11.png') top center no-repeat
+}
 
 
 
