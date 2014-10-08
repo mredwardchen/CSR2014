@@ -157,7 +157,7 @@ body.boxed #topBar {
 
 	color:#555;
 	font-size:13px;
-	border-bottom:rgba(0,0,0,0.1) 1px solid;
+	border-bottom:#5c5c5c 1px solid;
 }
 #topNav ul.dropdown-menu>li a i.fa {
 	margin-right:4px;
