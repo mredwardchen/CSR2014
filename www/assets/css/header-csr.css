@@ -154,11 +154,15 @@ body.boxed #topBar {
 	margin:0;
 	padding:10px 15px;
 	font-weight:400;
-
 	color:#555;
 	font-size:13px;
 	border-bottom:#5c5c5c 1px solid;
 }
+
+#topNav ul.dropdown-menu>li div.tile a {
+    border-bottom:#5c5c5c 0px solid;
+}
+
 #topNav ul.dropdown-menu>li a i.fa {
 	margin-right:4px;
 }
@@ -311,6 +315,11 @@ body.boxed #topBar {
 	display: table-cell;
 	float:none;
 }
+
+#topNav ul.nav>li.mega-menu div div.tile:hover {
+    background-color: #008080;
+}
+
 #topNav ul.nav>li.mega-menu div div:first-child {
 	border-left:0;
 }
