@@ -12,70 +12,85 @@
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="assets/images/demo/favicon.ico" />
-
 		<!-- WEB FONTS -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
 
         <%- data.css %>
 	</head>
 
-	<body class="smoothscroll">
+	<body class="smoothscroll boxed pattern11">
 
 		<div id="wrapper">
             <%- data.header %>
 
 			<!-- REVOLUTION SLIDER -->
-			<div class="container margin-top60">
+			<div class="container">
 
 				<div class="slider fullwidthbanner-container roundedcorners">
 					<div class="fullwidthbanner">
 						<ul class="hide">
 							<!-- SLIDE  -->
 							<li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="3000" data-saveperformance="off" >
-								<img src="assets/images/1x1.png" data-lazyload="assets/images/demo/blur.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" />
+								<img src="assets/images/1x1.png" data-lazyload="assets/images/cover/cover-2014-09.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" />
+                                <div class="tp-caption medium_light_white lfb start block_black" style="white-space: normal;"
+                                     data-x="left" data-hoffset="100"
+                                     data-y="230"
+                                     data-speed="300"
+                                     data-start="1200"
+                                     data-easing="easeOutExpo"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300">The demanding and harsh environment in which automotive electronics must operate poses<br/> reliability challenges as the industry migrates from gold to copper bond wires. Only optimized <br/>package design with well controlled assembly processes are suitable for this application.<br/> Potential solutions for automotive grade electronic components are presented in this article.<br/><br/>
+                                </div>
 
-								<div class="tp-caption lft start" 
-									data-x="-86" 
-									data-y="296" 
-									data-speed="750" 
-									data-start="750" 
-									data-easing="easeOutExpo" 
-									data-elementdelay="0.1" 
-									data-endelementdelay="0.1" 
-									data-endspeed="300">
-									<img src="assets/images/1x1.png" alt="" data-lazyload="assets/images/caption_bg.png" />
-								</div>
 
-								<div class="tp-caption medium_light_white lfb start" 
-									data-x="44" 
-									data-y="320" 
-									data-speed="300" 
-									data-start="1500" 
-									data-easing="easeOutExpo" 
-									data-splitin="none" 
-									data-splitout="none" 
-									data-elementdelay="0.1" 
-									data-endelementdelay="0.1" 
-									data-endspeed="300" >
-									2.5D TSV<br />enabler
-								</div>
-
-								<div class="tp-caption small_light_white lfb start" 
-									data-x="44" 
-									data-y="400" 
-									data-speed="300" 
-									data-start="1500" 
-									data-easing="easeOutExpo" 
-									data-splitin="none" 
-									data-splitout="none" 
-									data-elementdelay="0.1" 
-									data-endelementdelay="0.1" 
-									data-endspeed="300" >
-									<small>Enabling a multiple processor SiP <br> with 2.5D TSVs</small>
-								</div>
 							</li>
+                            <!-- SLIDE  -->
+                            <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="3000" data-saveperformance="off" >
+                                <img src="assets/images/1x1.png" data-lazyload="assets/images/demo/blur.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" />
+
+                                <div class="tp-caption lft start"
+                                     data-x="-86"
+                                     data-y="296"
+                                     data-speed="750"
+                                     data-start="750"
+                                     data-easing="easeOutExpo"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300">
+                                    <img src="assets/images/1x1.png" alt="" data-lazyload="assets/images/caption_bg.png" />
+                                </div>
+
+                                <div class="tp-caption medium_light_white lfb start"
+                                     data-x="44"
+                                     data-y="320"
+                                     data-speed="300"
+                                     data-start="1500"
+                                     data-easing="easeOutExpo"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300" >
+                                    2.5D TSV<br />enabler
+                                </div>
+
+                                <div class="tp-caption small_light_white lfb start"
+                                     data-x="44"
+                                     data-y="400"
+                                     data-speed="300"
+                                     data-start="1500"
+                                     data-easing="easeOutExpo"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300" >
+                                    <small>Enabling a multiple processor SiP <br> with 2.5D TSVs</small>
+                                </div>
+                            </li>
 						<!-- SLIDE  -->
 						<li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="3000" data-link="http://www.stepofweb.com/" data-target="_blank" data-saveperformance="off" >
 
@@ -94,19 +109,6 @@
 								data-endspeed="300">Control of warpage
                             </div>
 
-							<div class="tp-caption block_black sfl tp-resizeme" 
-								data-x="70" 
-								data-y="216" 
-								data-speed="750" 
-								data-start="2600" 
-								data-easing="easeOutExpo" 
-								data-splitin="none" 
-								data-splitout="none" 
-								data-elementdelay="0.1" 
-								data-endelementdelay="0.1" 
-								data-endspeed="300">to achieve yield and reliability
-							</div>
-
 							<div class="tp-caption block_black sfr tp-resizeme" 
 								data-x="70" 
 								data-y="260" 
@@ -119,6 +121,19 @@
 								data-endelementdelay="0.1" 
 								data-endspeed="300">a significant issue in surface mount technology (SMT) assembly.
 							</div>
+
+                            <div class="tp-caption block_black sfl tp-resizeme"
+                                 data-x="70"
+                                 data-y="216"
+                                 data-speed="750"
+                                 data-start="2600"
+                                 data-easing="easeOutExpo"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-elementdelay="0.1"
+                                 data-endelementdelay="0.1"
+                                 data-endspeed="300">to achieve yield and reliability
+                            </div>
 						</li>
 
 						<!-- SLIDE  -->
@@ -301,11 +316,12 @@
 			<!-- /REVOLUTION SLIDER -->
 
             <!-- Banner -->
-            <div class="container">
-                <a class="block clearfix" href="#purchase" target="_blank" rel="nofollow">
-                    <img class="img-responsive" src="assets/images/demo/frame1.gif" alt="">
-                </a>
-            </div><!-- /Banner -->
+            <!--<div class="container">-->
+                <!--<a class="block clearfix" href="#purchase" target="_blank" rel="nofollow">-->
+                    <!--<img class="img-responsive" src="assets/images/demo/frame1.gif" alt="">-->
+                <!--</a>-->
+            <!--</div>-->
+            <!-- /Banner -->
                 
 
 			<!-- POPULAR -->
