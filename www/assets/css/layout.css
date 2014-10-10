@@ -127,7 +127,7 @@ textarea, select {
 	body.boxed #topBar, /* IE BUG */
 	body.boxed footer {
 		margin:auto;
-		max-width:974px;
+		max-width:1061px;
 	}
 	body.boxed #wrapper {
 		background-color:#fff;
@@ -1398,13 +1398,13 @@ body.boxed .onepage-slider-offset {
  
 /** Responsive
  **************************************************************** **/
-@media only screen and (min-width: 975px) {
+@media only screen and (min-width: 1062px) {
     .container {
         width:100%;
     }
 }
 
-@media only screen and (max-width: 974px) {
+@media only screen and (max-width: 1061px) {
 	.container {
 		width:100%;
 	}
