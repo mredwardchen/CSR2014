@@ -1401,6 +1401,10 @@ hr {
     hr.quarter-margins {
         margin:15px 0;
     }
+    hr.eighth-margins {
+        margin: 7px 0;
+    }
+
 hr.no-lines {
 	border:transparent 0px solid;
 }
@@ -1424,6 +1428,10 @@ article hr {
 
     .divider.quarter-margins {
         margin:15px 0;
+    }
+
+    .divider.eighth-margins {
+        margin: 7px 0;
     }
 
 .divider .fa {
