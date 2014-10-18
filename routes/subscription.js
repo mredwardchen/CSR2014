@@ -34,6 +34,10 @@ function subscription (req, res, config) {
         {'title': '06. Please indicate Month of Birth', 'key': 'F_07'},
         {'title': '07. May we contact you by email about your subscription?', 'key': 'F_08'}
     ];
+    params.header = config.data.header;
+    params.footer = config.data.footer;
+    params.scripts = config.data.scripts;
+    params.css = config.data.css;
 
 
     function processParams(p) {
