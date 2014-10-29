@@ -353,7 +353,7 @@ i.fa 				{ text-decoration:none !important;}
 .line-through		{ text-decoration:line-through;	}
 .transparent 		{ background-color:transparent;	}
 img.pull-left 		{ margin:0 20px 10px 0; }
-img.pull-right 		{ margin:0 10px 20px 0; }
+img.pull-right 		{ margin:0 10px 20px 10px; }
 .hide 				{ display:none; }
 	.elipsis {
 		width:100%;
