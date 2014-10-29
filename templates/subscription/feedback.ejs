@@ -1,17 +1,36 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
 <head>
+    <meta charset="utf-8" />
     <title>Chip Scale Review Magazine : Subscription</title>
-    <meta content="New subscription notice" name="description">
+    <meta content="Node Website Template" name="description">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" name="viewport">
-    <!--<link href="../public/images/favicon.ico" rel="shortcut icon">-->
-    <!--<link href="../public/css/app.css" rel="stylesheet">-->
-</head>
-<body>
 
-<h1>Thank you for your subscription!</h1>
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <%- data.css %>
+</head>
+
+<body class="smoothscroll boxed pattern11">
+
+<div id="wrapper">
+
+    <%- data.header %>
+
+    <section class="page-title">
+        <div class="container">
+            <header>
+                <h2><!-- Page Title -->
+                    Thank you for your subscription!
+                </h2><!-- /Page Title -->
+            </header>
+        </div>
+    </section>
 
 <ul>
     <% for (var i=0; i< data.length; i++) { %>
@@ -23,6 +42,6 @@
     <% } %>
     </li>
 </ul>
-
+</div>
 </body>
 </html>

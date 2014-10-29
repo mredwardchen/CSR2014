@@ -957,6 +957,14 @@ h6.progress-head {
 			transition: all 0.2s;
 }
 
+.btn, .btn-primary {
+    background-color: #004C59;
+}
+
+.btn:hover, .btn-primary:hover {
+    background-color: #008080;
+}
+
 .btn.notransition {
 	-webkit-transition: all 0s;
 	   -moz-transition: all 0s;
