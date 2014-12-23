@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "./node_modules/browserify/bin/cmd.js --debug public/js/app.js > public/js/bundle.js && npm run uglify",
-    "start": "npm run build && node server.js",
+    "start": "npm run build && nodejs server.js",
     "debug": "npm run build && nodemon -e '*' server.js",
     "uglify": "uglifyjs www/assets/plugins/jquery-2.1.1.min.js www/assets/plugins/jquery.isotope.js www/assets/plugins/masonry.js www/assets/plugins/bootstrap/js/bootstrap.min.js www/assets/plugins/magnific-popup/jquery.magnific-popup.min.js www/assets/plugins/owl-carousel/owl.carousel.min.js www/assets/plugins/knob/js/jquery.knob.js www/assets/plugins/flexslider/jquery.flexslider-min.js www/assets/plugins/revolution-slider/js/jquery.themepunch.plugins.min.js www/assets/plugins/revolution-slider/js/jquery.themepunch.revolution.min.js www/assets/plugins/feedEk/js/FeedEk.js www/assets/js/revolution_slider.js  www/assets/js/scripts.js -o www/assets/js/all.js --preamble '/** Copyright 2014 XinnamonJ Inc. */' ",
     "watchify": "./node_modules/watchify/bin/cmd.js --debug public/js/app.js -o public/js/bundle.js",
@@ -47,7 +47,7 @@
     "stylus": "~0.32.1",
     "watchify": "~0.3.0",
     "node-dev": "~2.0.2",
-    "uglifyjs": "~2.4.15"
+    "uglifyjs": "~2.3.6"
   },
   "engines": {
     "node": "0.10.x"
