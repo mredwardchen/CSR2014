@@ -68,7 +68,7 @@ function subscription (req, res, config) {
                 //console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
                 var p = queryString.parse(chunk.toString());
                 processParams(p);
-                var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'w7y2ublh', process.env.SENDGRID_PASSWORD || 'app28001807@heroku.com');
+                var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'ed@xinnamonj.com', process.env.SENDGRID_PASSWORD || 'cupert1n0');
                 sendgrid.send({
                     to:       ['feisajan@yahoo.com','mredwardchen@hotmail.com'],
                     from:     'csr2014@xinnamonj.com',
