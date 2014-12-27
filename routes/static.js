@@ -31,7 +31,9 @@ module.exports = function (req, res, config) {
                      {header: headerText, footer: footerText, scripts: scriptProdText, css: cssText}
                    : {header: headerText, footer: footerText, scripts: scriptText, css: cssText};
 
-    if (config.name === 'development') {
+    //if (config.name === 'development') {
+    if (req.url && endsWith(req.url, "?debug=1")) {
+        req.url = req.url.replace("?debug=1", "");
         console.log('req.url:'+req.url);
     }
 
