@@ -29,7 +29,7 @@ module.exports = function (req, res, config) {
     var html = '';
     var params = (config.name === 'prod') ?
                      {header: headerText, footer: footerText, scripts: scriptProdText, css: cssText}
-                   : {header: headerText, footer: footerText, scripts: scriptProdText, css: cssText};
+                   : {header: headerText, footer: footerText, scripts: scriptText, css: cssText};
 
     if (config.name === 'development') {
         console.log('req.url:'+req.url);
