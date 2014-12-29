@@ -27,9 +27,10 @@ module.exports = function (req, res, config) {
     var htmlPath = '';
     var htmlTemplate = '';
     var html = '';
+    var referer = req.headers['referer'] || 'index.html';
     var params = (config.name === 'prod') ?
-                     {header: headerText, footer: footerText, scripts: scriptProdText, css: cssText}
-                   : {header: headerText, footer: footerText, scripts: scriptText, css: cssText};
+                     {header: headerText, footer: footerText, scripts: scriptProdText, css: cssText, referer: referer}
+                   : {header: headerText, footer: footerText, scripts: scriptText, css: cssText, referer: referer};
 
     //if (config.name === 'development') {
     if (req.url && endsWith(req.url, "?debug=1")) {
