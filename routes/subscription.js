@@ -70,9 +70,9 @@ function subscription (req, res, config) {
                 processParams(p);
                 var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'ed@xinnamonj.com', process.env.SENDGRID_PASSWORD || 'cupert1n0');
                 sendgrid.send({
-                    to:       ['feisajan@yahoo.com','mredwardchen@hotmail.com'],
-                    from:     'csr2014@xinnamonj.com',
-                    subject:  'CSR new subscriber notice',
+                    to:       ['subs@chipscalereview.com', 'ed@xinnamonj.com'],
+                    from:     'subs@chipscalereview.com',
+                    subject:  'New CSR Subscription',
                     text:     toEmailBody(params)
                 }, function(err, json) {
                     if (err) { console.error(err); }
