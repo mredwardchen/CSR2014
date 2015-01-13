@@ -29,14 +29,14 @@
     <link href="assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
 </head>
 
-<body class="grey">
+<body class="grey printable">
 
 <div class="comingsoon">
 
     <header>
         <div class="row">
             <div class="col-md-2">
-                <a class="list-group-item" href="<%- data.referer %>" style="border: 0px; position: absolute; top:-100px; left: 0px;"><i class="fa fa-home fa-2x"></i>&nbsp; Home</a>
+                <a class="list-group-item" href="<%- data.referer %>" style="border: 0px; position: absolute; top:-100px; left: 0px;"><i class="fa fa-reply fa-2x"></i>&nbsp; Back</a>
             </div>
         </div>
     </header>
@@ -46,36 +46,27 @@
         <h1>COMING SOON</h1>
         <br>
 
-
         <button type="button" class="btn btn-default"><a href="mailto:editor@chipscalereview.com">Notify Me</a></button>
 
         <div class="row">
-
             <div class="col-md-12">
-                <p><h4>Notify me when you are on line!<div class="btn-toolbar" role="toolbar">
+                <p><h4>Notify me when you are on line!</h4></p>
+                <div class="btn-toolbar" role="toolbar"></div>
+            </div>
+        </div>
 
-                </div>
+        <hr class="half-margins" />
+
+        <div class="container">
+
+            <!-- COUNTDOWN -->
+            <div id="countdown"></div>
+            <!-- /COUNTDOWN -->
 
         </div>
 
-
-
-
-    <hr class="half-margins" />
-
-    <div class="container">
-
-        <!-- COUNTDOWN -->
-        <div id="countdown"></div>
-        <!-- /COUNTDOWN -->
-
+        <hr class="half-margins" />
     </div>
-
-    <hr class="half-margins" />
-
-
-
-
 </div><!-- /.comingsoon -->
 
 <div class="container white-text margin-top20 margin-bottom60 fsize13 text-center">
@@ -85,9 +76,7 @@
 <!-- JAVASCRIPT FILES -->
 <script type="text/javascript" src="assets/plugins/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="assets/plugins/jquery.countdown.js"></script>
-
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 
 <script type="text/javascript">
@@ -100,7 +89,7 @@
 
          _date = new Date(2015, 1, 1);
          */
-                _date = new Date(_date.getFullYear(), _date.getMonth() + 1, 5);
+        _date = new Date(_date.getFullYear(), _date.getMonth() + 1, 5);
 
         jQuery('#countdown').countdown({until: _date});
     });

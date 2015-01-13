@@ -2886,7 +2886,7 @@ p.dropcap.color:first-letter {
 		@CUSTOM RULES 
 	*/
 	#topBar, #navBar, #topNav, #footer, #header, .page-title {
-		display:none !important;
+		/*display:none !important;*/
 	}
 	body * {
 		visibility: hidden;
