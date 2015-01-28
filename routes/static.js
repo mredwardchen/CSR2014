@@ -5,6 +5,7 @@ var st = require('st')
 var EJS = require('ejs');
 var fs = require('fs');
 var subscription = require(__dirname+'/subscription.js');
+var hint = require(__dirname+'/hint.js');
 
 var headerPath = __dirname + '/../templates/layout/header.ejs';
 var footerPath = __dirname + '/../templates/layout/footer.ejs';
@@ -57,6 +58,9 @@ module.exports = function (req, res, config) {
         }
     } else if (req.url.indexOf('/subscription') === 0) {
         subscription(req, res, {data: params});
+    } else if (req.url.indexOf('/csrhint') === 0) {
+        hint(req, res, config);
+        res.end();
     } else {
         // serve static resources
         mount(req, res, function() {
