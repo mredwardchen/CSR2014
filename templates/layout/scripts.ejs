@@ -36,8 +36,10 @@
     //<![CDATA[
     xj_use_first_party = true;
     xj_allow_multiple_calls = true;
-    xj_pixel_url = 'http://localhost:5000/csrhint/';
-    xj_pixel_secure = 'https://localhost:5000/csrhint/';
+
+    xj_pixel_url = window.location.protocol + '//' + window.location.host + '/csrhint/';
+    xj_pixel_secure = 'https//' + window.location.host + '/csrhint/';
+
     XJTAGGER.doTag(2);
     //]]>
 </script>
