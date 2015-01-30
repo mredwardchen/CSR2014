@@ -42,6 +42,7 @@ function hint (req, res, config) {
     data['country'] = geo['country'] ? geo['country'] : 'NA';
     data['region'] = geo['region'] ? geo['region'] : 'NA';
     data['city'] = geo['city'] ? geo['city'] : 'NA';
+    data['ll'] = geo['ll'] ? geo['ll'].toString() : 'NA';
     //console.log('Geo==>'+geo);
 
     // parse user agent
