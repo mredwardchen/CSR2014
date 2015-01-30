@@ -13,13 +13,8 @@
     xj_use_first_party = true;
     xj_allow_multiple_calls = true;
 
-    if (window.location.port !== '') {
-        xj_pixel_url = window.location.protocol + '//' + window.location.host + ':' + window.location.port + '/csrhint/';
-        xj_pixel_secure = 'https//' + window.location.host + ':' + window.location.port + '/csrhint/';
-    } else {
-        xj_pixel_url = window.location.protocol + '//' + window.location.host + '/csrhint/';
-        xj_pixel_secure = 'https//' + window.location.host + '/csrhint/';
-    }
+    xj_pixel_url = window.location.protocol + '//' + window.location.host + '/csrhint/';
+    xj_pixel_secure = 'https//' + window.location.host + '/csrhint/';
 
     XJTAGGER.doTag(2);
     //]]>
