@@ -273,6 +273,9 @@
 	background-image: url('data:image/gif;base64,R0lGODlhCgAKAIAAAP///wAAACH5BAEAAAAALAAAAAAKAAoAAAIIhI+py+0PYysAOw==');
 }
 
+.ls-slide a {
+    color: white;
+}
 
 
 /* Embedded videos */
