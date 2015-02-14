@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Chip Scale Review - The International Magazine for Device and Wafer-Level Test, Assembly, and Packaging Addressing High-density Interconnection of Microelectronic IC's including 3D packages, MEMS, MOEMS, RF/Wireless, Optoelectronic and Other Wafer-fabricated Devices for the 21st Century</title>
+    <meta name="keywords" content="HTML5,CSS3,Template" />
+    <meta name="description" content="" />
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/demo/favicon.ico" />
+
+    <!-- WEB FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+    <link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
+</head>
+
+<body class="grey printable">
+
+<div class="comingsoon">
+
+    <header>
+        <div class="row">
+            <div class="col-md-2">
+                <a class="list-group-item" href="<%- data.referer %>" style="border: 0px; position: absolute; top:-100px; left: 0px;"><i class="fa fa-reply fa-2x"></i>&nbsp; Back</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>COMING SOON</h1>
+        <br>
+        <button1 type="button" class="btn btn-default"><a href="mailto:editor@chipscalereview.com">Notify Me</a></button1>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p><h4>Notify me when you are on line!</h4><div class="btn-toolbar" role="toolbar"></div></p>
+            </div>
+        </div>
+
+        <hr class="half-margins" />
+
+        <div class="container">
+            <!-- COUNTDOWN -->
+            <div id="countdown"></div>
+            <!-- /COUNTDOWN -->
+        </div>
+
+        <hr class="half-margins" />
+    </div><!-- /.comingsoon -->
+
+    <div class="container white-text margin-top20 margin-bottom60 fsize13 text-center">
+        © 2014 Chip Scale Review Magazine by Haley Publishing Inc. All rights reserved
+    </div>
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript" src="assets/plugins/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery.countdown.js"></script>
+    <script type="text/javascript" src="assets/js/scripts.js"></script>
+
+    <script type="text/javascript">
+
+        /* Countdown */
+        jQuery(function () {
+            var _date = new Date(),
+            /*
+             Usage: (year, month, day)
+
+             _date = new Date(2015, 1, 1);
+             */
+                    _date = new Date(_date.getFullYear(), _date.getMonth() + 1, 5);
+
+            jQuery('#countdown').countdown({until: _date});
+        });
+
+        /* Background Rotator */
+        jQuery.backstretch([
+            "assets/images/demo/layerslider/bg4.jpg",
+            "assets/images/demo/layerslider/bg6b.jpg",
+            "assets/images/demo/layerslider/bg.jpg"
+        ], {
+            fade: 1200,
+            duration: 7500
+        });
+    </script>
+
+    <script type="text/javascript">
+        XJTAGGER.doTag(2);
+    </script>
+</div>
+</body>
+</html>
