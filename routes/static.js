@@ -9,11 +9,13 @@ var hint = require(__dirname+'/hint.js');
 
 var headerPath = __dirname + '/../templates/layout/header.ejs';
 var footerPath = __dirname + '/../templates/layout/footer.ejs';
+var adsPath    = __dirname + '/../templates/layout/ads.ejs';
 var scriptsPath = __dirname + '/../templates/layout/scripts.ejs';
 var scriptsProdPath = __dirname + '/../templates/layout/scripts-prod.ejs';
 var cssPath = __dirname + '/../templates/layout/css.ejs';
 var headerText = fs.readFileSync(headerPath, 'utf8');
 var footerText = fs.readFileSync(footerPath, 'utf8');
+var adsText    = fs.readFileSync(adsPath, 'utf8');
 var scriptText = fs.readFileSync(scriptsPath, 'utf8');
 var scriptProdText = fs.readFileSync(scriptsProdPath, 'utf8');
 var cssText = fs.readFileSync(cssPath, 'utf8');
@@ -30,8 +32,8 @@ module.exports = function (req, res, config) {
     var html = '';
     var referer = req.headers['referer'] || 'index.html';
     var params = (config.name === 'prod') ?
-                     {header: headerText, footer: footerText, scripts: scriptProdText, css: cssText, referer: referer}
-                   : {header: headerText, footer: footerText, scripts: scriptText, css: cssText, referer: referer};
+                     {header: headerText, footer: footerText, ads: adsText, scripts: scriptProdText, css: cssText, referer: referer}
+                   : {header: headerText, footer: footerText, ads: adsText, scripts: scriptText,     css: cssText, referer: referer};
 
     //if (config.name === 'development') {
     if (req.url && endsWith(req.url, "?debug=1")) {
