@@ -3,6 +3,8 @@
 
 process.title = 'csr2014-website';
 
+require('newrelic');
+
 // core module
 var http = require('http');
 
