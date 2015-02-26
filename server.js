@@ -22,16 +22,21 @@ Templar.loadFolder(config.templates);
 router.addRoute('*', require('./routes/static.js'));
 
 http.createServer(function (req, res) {
+    try {
+        res.template = Templar(req, res, templarOptions);
 
-  res.template = Templar(req, res, templarOptions);
+        var route = router.match(req.url);
 
-  var route = router.match(req.url);
-
-  if (route) {
-    route.fn(req, res, config);
-  } else {
-    errorHandler(req, res, 'No routes found!');
-  }
+        if (route) {
+            route.fn(req, res, config);
+        } else {
+            console.log('No routes found: req.url:'+req.url);
+            errorHandler(req, res, 'No routes found!');
+        }
+    } catch(err) {
+        console.log('Error: req.url:'+req.url);
+        errorHandler(req, res, 'No routes found!');
+    }
 }).listen(port);
 
 // log
