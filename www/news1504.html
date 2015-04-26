@@ -20,90 +20,225 @@
         <%- data.css %>
 	</head>
 
-	<body class="smoothscroll boxed pattern11 printable">
+<body class="smoothscroll boxed pattern11 printable">
 
-    <div id="wrapper">
-        <%- data.header %>
-
-        <!-- PAGE TOP -->
-        <section class="page-title">
+<div id="wrapper">
+    <div id="header"><!-- class="sticky" for sticky menu -->
+        <!-- Top Nav -->
+        <header id="topNav">
             <div class="container">
-                <header>
-                    <ul class="breadcrumb"><!-- breadcrumb -->
+                <!-- Mobile Menu Button -->
+                <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
 
-                        <li class=" active">Apr</li>
-                        <li><a href="news1503.html">Mar</a></li>
-                        <li><a href="news1502.html">Feb</a></li>
-                        <li><a href="news1501.html">Jan</a></li>
+                <!-- Top Nav -->
+                <div class="navbar-collapse nav-main-collapse collapse">
+                    <nav class="nav-main">
+                        <ul id="topMain" class="nav nav-pills nav-main">
+                            <li class="dropdown active">
+                            <li class="dropdown">
+                                <a class="dropdown" href="index.html"><i class="fa fa-home"></i><span>Home</span></a>
+                            </li>
 
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#">INDUSTRY<span>Spotlight</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="news15.html">Industry Spotlight</a></li>
+                                    <li><a href="event1503.html">Events</a></li>
+                                    <li><a href="tb1504-01.html">Tech Briefs</a></li>
 
-
-                    </ul>
-                    <!-- /breadcrumb -->
-                    <h2><!-- Page Title -->
-                        Industry Spotlight - 2015
-                    </h2><!-- /Page Title -->
-                </header>
-            </div>
-        </section>
-        <!-- /PAGE TOP -->
-
-
-        <!-- POPULAR -->
-        <section>
-            <div class="container">
-                <h4><strong>April </strong> 2015</h4>  <br>
-                <div class="row">
-                    <div class="col-md-9">
+                                </ul>
+                            </li>
 
 
-                        <a name="1401-01">  </a>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="tbd1">ISSUE<span>Archive</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="issue2015.html">2015</a></li>
+                                    <li><a href="issue2014.html">2014</a></li>
+                                    <li><a href="issue2013.html">2013</a></li>
+                                    <li><a href="issue2012.html">2012</a></li>
+                                    <li><a href="issue2011.html">2011</a></li>
+                                    <li><a href="issue2010.html">2010</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="dropdown" href="editorial.html">EDITORIAL <span>Calendar</span></a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown" href="supplier.html">SUPPLIER <span>Directory</span></a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" >ADVERTISE <span>With us</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="ad.html">Why CSR</a></li>
+                                    <li><a href="editorial.html">Editorial Calendar</a></li>
+                                    <li><a href="ad-rate.html">Ad Rate Card & Mech Specs</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#">IWLPC<span>Event</span></a>
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="iwlpc2015.html">2015</a></li>
+                                    <li><a href="iwlpc2014.html">2014</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#">ABOUT <span>CSR</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="staff.html">Staff</a></li>
+                                    <li><a href="editor.html">Contributing Editors</a></li>
+                                    <li><a href="advisor.html">Editorial Advisory Board</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown" href="contact.html">CONTACT <span>Us</span></a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown" href="subscription">SUBSCRIBE <span>Today</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /Top Nav -->
+            </div><!-- /.container -->
+        </header>
+        <!-- /Top Nav -->
+
+        <!-- Top Bar -->
+        <header id="topBar">
+            <div class="container margin-bottom10">
+                <div class="pull-left fsize13 hide_mobile">
+                    <div class="block text-right"><!-- social -->
+                        <!-- Logo -->
+                        <a class="logo" href="index.html">
+
+                            <img src="assets/images/logo/csr-logo.jpg" height="60" alt="" />
+                        </a>
+                    </div><!-- /social -->
+                    <span style="float: right; position: absolute; right: 20px; top: 30px;"><h4>The Future of Semiconductor Packaging</h4></span>
+                </div>
+            </div><!-- /.container -->
+        </header>
+        <!-- /Top Bar -->
+
+    </div>
+    <!-- header -->
+
+    <!-- PAGE TOP -->
+    <section class="page-title">
+        <div class="container">
+            <header>
+                <ul class="breadcrumb"><!-- breadcrumb -->
+
+                    <li class=" active">Apr</li>
+                    <li><a href="news1503.html">Mar</a></li>
+                    <li><a href="news1502.html">Feb</a></li>
+                    <li><a href="news1501.html">Jan</a></li>
 
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <img class="pull-left" src="assets/images/logo/promex-quick-pack-logo.jpg" width="180" alt=""/>
 
-                                <h4> Promex Industries acquires Quik-Pak, a division of Delphon </h4>
-                                <p>
+                </ul>
+                <!-- /breadcrumb -->
+                <h2><!-- Page Title -->
+                    Industry Spotlight - 2015
+                </h2><!-- /Page Title -->
+            </header>
+        </div>
+    </section>
+    <!-- /PAGE TOP -->
+
+
+    <!-- POPULAR -->
+    <section>
+        <div class="container">
+            <h4><strong>April </strong> 2015</h4>  <br>
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <a name="1401-02">  </a>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img class="pull-left" src="assets/images/logo/Aries-logo.png" width="180" alt=""/>
+
+                            <h4> Aries Electronics announces new thermal solutions for its test and burn-in socket line  </h4>
+                            <p>Bristol, PA. April 13, 2015 – Aries Electronics, a US manufacturer of standard, programmed and custom interconnection products, burn-in and test IC sockets, and adapters used worldwide, announced the introduction of its new thermal profiling solution for its test and burn-in socket line of products.
+                            </p>     ®
+
+                            <img class="pull-left" src="assets/images/news/2015-04/TA4816_Thermal_Map_B_HD.JPG" width="380" alt=""/>
+                            <p>Aries’ thermal profile solutions go beyond standard heat-sink and fan options offered by others.  This solution incorporates advanced thermal profiling software to develop an application/IC specific thermal analysis for each customer’s requirement(s).
+                            </p><p>This software will analyze all of the necessary parameters within the socket/IC/test environment and determine the correct heat sink/fan/cooling combination necessary to optimize the test and burn-in application.  This enables the socket to be thermally correct before it is placed into its final environment saving Aries’ customers time and money.
+                            </p> <p>
+
+                            New thermal profiles are initiated using an online fill-in .pdf form linked from all of Aries’ test and burn-in socket pages.
+
+                            <a href="http://www.arieselec.com/products/data/23029-Aries-Thermal-Analysis-Input-Data-Sheet.pdf" target="Aries">Datasheet Link</a>    </p>
+
+                            <p>For additional information, contact Paul Ruo, Aries Electronics Inc., 2609 Bartram Road, Bristol, Pa. 19007-6810; Tel: 215-781-9956;
+                                <a href="mailto:paulruo@arieselec.com" class="link">Email: paulruo@arieselec.com</a>
+
+                        </div>
+                    </div>
+
+                    <hr class="quarter-margins">
+
+                    <a name="1401-01">  </a>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img class="pull-left" src="assets/images/logo/promex-quick-pack-logo.jpg" width="180" alt=""/>
+
+                            <h4> Promex Industries acquires Quik-Pak, a division of Delphon </h4>
+                            <p>
                                 Santa Clara, CA, USA, April 1 2015 - Promex Industries, announced
                                 today the acquisition of San Diego based Quik-Pak, a division
                                 of Delphon. Quik-Pak will retain its San Diego, CA location
                                 and operate as a division of Promex. The combined entities
                                 are now able to offer a broader range of electronic and
                                 microelectronic assembly services.
-                                </p><p>
-                                “This is an exciting enhancement for Promex”, says Richard
-                                Otte, Promex president, “We look forward to leveraging the
-                                strengths of the combined companies to provide customers with
-                                broader engineering expertise, enhanced packaging
-                                capabilities, expanded facilities, and superior customer
-                                service.” Promex is in the heart of Silicon Valley and is
-                                known for the caliber of its engineering staff. Quik-Pak is
-                                in Southern California and recently expanded its packaging and
-                                assembly operation to include higher volume transfer molding
-                                and wafer processing capabilities. Together, the facilities
-                                Promex Industries Acquires Quik-Pak, A division of Delphon
+                            </p><p>
+                            “This is an exciting enhancement for Promex”, says Richard
+                            Otte, Promex president, “We look forward to leveraging the
+                            strengths of the combined companies to provide customers with
+                            broader engineering expertise, enhanced packaging
+                            capabilities, expanded facilities, and superior customer
+                            service.” Promex is in the heart of Silicon Valley and is
+                            known for the caliber of its engineering staff. Quik-Pak is
+                            in Southern California and recently expanded its packaging and
+                            assembly operation to include higher volume transfer molding
+                            and wafer processing capabilities. Together, the facilities
+                            Promex Industries Acquires Quik-Pak, A division of Delphon
 
-                                are ISO 13485:2003 and ISO 9001:2008 certified, ITAR and FDA
-                                Title 21 Part 820 compliant.        </p>
+                            are ISO 13485:2003 and ISO 9001:2008 certified, ITAR and FDA
+                            Title 21 Part 820 compliant.        </p>
 
-                            </div>
                         </div>
+                    </div>
 
-                        <hr class="quarter-margins">
+                    <hr class="quarter-margins">
 
 
+                    <!-- pagination -->
+                    <div class="text-center">
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li><a href="news1503.html">Next &nbsp;&raquo;</a></li>
+                        </ul>
+                    </div>
+                    <!-- /pagination -->
+                </div>
 
-                            <!-- pagination -->
-                             <div class="text-center">
-                             <ul class="pagination">
-                                   <li class="disabled"><a href="#">&laquo;</a></li>
-                                  <li><a href="news1503.html">Next &nbsp;&raquo;</a></li>
-                              </ul>
-                              </div>
-                             <!-- /pagination -->
-                       </div>
 
 
                     <div class="col-md-3">
