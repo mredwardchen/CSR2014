@@ -75,8 +75,10 @@ function subscription (req, res, config) {
                     subject:  'New CSR Subscription',
                     text:     toEmailBody(params)
                 }, function(err, json) {
-                    if (err) { console.error(err); }
-                    res.template('subscription/feedback.ejs', {'data': params});
+                    if (err) { console.error('Error:'+err);
+                    } else {
+                        res.template('subscription/feedback.ejs', {'data': params});
+                    }
                 });
             }
         });

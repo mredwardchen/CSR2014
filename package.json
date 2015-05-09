@@ -38,14 +38,14 @@
     "logfmt": "~1.1.2",
     "express": "~4.7.2",
     "mysql": "~2.4.1",
-    "sendgrid": "1.0.4",
     "querystring": "*",
     "sendgrid": "1.3.0",
     "cookie":"~0.1.2",
     "ua-parser-js":"~0.6.0",
     "request-ip":"~0.0.4",
     "geoip-lite":"~1.1.5",
-    "google-spreadsheet":"~0.2.8"
+    "google-spreadsheet":"~0.2.8",
+    "captchapng":"~0.0.1"
   },
   "devDependencies": {
     "tape": "~1.0.2",
