@@ -145,6 +145,14 @@
             errors = true;
         }
 
+        if (($("#F_09").val() == '') || ($("#F_09").val() != $('#magic').val())) {
+            $("#F_09").css({backgroundColor: 'red'});
+            errors = true;
+        } else {
+            $("#F_09").css({backgroundColor: 'white'});
+            errors = false;
+        }
+
         if ($("#F_14").val() == '') {
             $("#F_14").css({backgroundColor: 'red'});
             errors = true;
@@ -912,6 +920,20 @@
                 </div>
             </div>
 
+            <!-- captcha -->
+            <div class="form-group">
+                <label for="F_09" class="col-sm-4 control-label required">Enter Verification Code&nbsp;<img src="/captcha.png?<%- data.magic %>" width="80" height="30"></label>
+                <div class="col-sm-8">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <td><input id="F_09" name="F_09" type="text"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <p style="color:red">
                 (Your e-mail address will never be shared with other companies or websites without your permission.)
             </p>
@@ -930,7 +952,7 @@
 
         </div>
 
-
+    <input type="hidden" id="magic" name="magic" value="<%- data.magic %>" >
     </form>
 </div>
 

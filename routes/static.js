@@ -1,9 +1,10 @@
 'use strict';
 
 // npm packages
-var st = require('st')
+var st = require('st');
 var EJS = require('ejs');
 var fs = require('fs');
+var captchapng = require('captchapng');
 var subscription = require(__dirname+'/subscription.js');
 var hint = require(__dirname+'/hint.js');
 
@@ -61,15 +62,33 @@ module.exports = function (req, res, config) {
             }
         }
     } else if (req.url.indexOf('/subscription') === 0) {
+        params.magic = parseInt(Math.random()*9000+1000);
         subscription(req, res, {data: params});
     } else if (req.url.indexOf('/csrhint') === 0) {
         hint(req, res, config);
         res.end();
-    } else {
+    } else if (req.url && req.url.indexOf('/captcha.png?') === 0) {
+        var magic = 8888;
+        try {
+            magic = parseInt(req.url.substr(13))
+        } catch(er) {
+            magic = parseInt(Math.random()*9000+1000);
+        }
+        var p = new captchapng(80,30,magic); // width,height,numeric captcha
+        p.color(0, 0, 0, 0);  // First color: background (red, green, blue, alpha)
+        p.color(80, 80, 80, 255); // Second color: paint (red, green, blue, alpha)
+
+        var img = p.getBase64();
+        var imgbase64 = new Buffer(img,'base64');
+        res.writeHead(200, {
+            'Content-Type': 'image/png'
+        });
+        res.end(imgbase64);
+    } else{
         // serve static resources
         mount(req, res, function() {
             errorHandler(req, res, 404, params);
-        })
+        });
     }
 
 };
