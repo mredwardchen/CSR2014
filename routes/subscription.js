@@ -47,11 +47,28 @@ function subscription (req, res, config) {
         }
     }
 
+    function spamCheck() {
+        if (params[0] && params[0].value === '') {
+            return true;
+        }
+
+        // explicit country check
+        if (params[10] && params[10].value === '1') {
+            return true;
+        }
+
+        for (var i=1; i<14; i++) {
+            if (params[i] && params[i].value === '1') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     function toEmailBody(p) {
         var data = params || p;
         var text = EJS.render(emailTemplate, {data: data, debug: false, filename: path});
-        console.log('Email: %s', text);
-
         return text;
     }
 
@@ -68,18 +85,26 @@ function subscription (req, res, config) {
                 //console.log('got %d bytes of data. data==> %s', chunk.length, chunk);
                 var p = queryString.parse(chunk.toString());
                 processParams(p);
+                var isSpam = spamCheck();
+                var to = isSpam ? ['ed@xinnamonj.com'] : ['subs@chipscalereview.com', 'ed@xinnamonj.com'];
+                var subject = isSpam ? '[Possible Spam] New CSR Subscription' : 'New CSR Subscription';
                 var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME || 'ed@xinnamonj.com', process.env.SENDGRID_PASSWORD || 'qq12345@QQ.com');
-                sendgrid.send({
-                    to:       ['subs@chipscalereview.com', 'ed@xinnamonj.com'],
-                    from:     'subs@chipscalereview.com',
-                    subject:  'New CSR Subscription',
-                    text:     toEmailBody(params)
-                }, function(err, json) {
-                    if (err) { console.error('Error:'+err);
-                    } else {
-                        res.template('subscription/feedback.ejs', {'data': params});
-                    }
-                });
+                if (isSpam) {
+                    console.log('[Possible Spam]: %s', toEmailBody(params));
+                    res.template('subscription/feedback.ejs', {'data': params});
+                } else {
+                    sendgrid.send({
+                        to:       to,
+                        from:     'subs@chipscalereview.com',
+                        subject:  subject,
+                        text:     toEmailBody(params)
+                    }, function(err, json) {
+                        if (err) { console.error('Error:'+err);
+                        } else {
+                            res.template('subscription/feedback.ejs', {'data': params});
+                        }
+                    });
+                }
             }
         });
     }
