@@ -16,6 +16,8 @@ module.exports = hint;
 
 function hint (req, res, config) {
 
+    return;
+
     var data = {};
     var cookies = req.headers['cookie'] ? req.headers['cookie'] : 'NA';
     var host = req.headers['host'] ? req.headers['host'] : 'NA';
