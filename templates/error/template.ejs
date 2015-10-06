@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
 <!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8" />
-        <title>Chip Scale Review Magazine - The International Magazine for Device and Wafer-Level Test, Assembly, and Packaging Addressing High-density Interconnection of Microelectronic IC's including 3D packages, MEMS, MOEMS, RF/Wireless, Optoelectronic and Other Wafer-fabricated Devices for the 21st Century</title>
-        <meta name="keywords" content="Chip Scale Review Magazine, Device test, Wafer-Level Test, wafer Assembly, wafer Packaging, High-density Interconnection, Microelectronic, IC, 3D packages, MEMS, MOEMS, RF/Wireless, Optoelectronic, semiconductor, wafer manufacturing, wafer fabrication" />
-		<meta name="description" content="" />
-		<meta name="Author" content="" />
+<!--[if gt IE 9]><!-->
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Chip Scale Review</title>
+    <meta name="keywords" content="Chip Scale Review Magazine, Device test, Wafer-Level Test, wafer Assembly, wafer Packaging, High-density Interconnection, Microelectronic, IC, 3D packages, MEMS, MOEMS, RF/Wireless, Optoelectronic, semiconductor, wafer manufacturing, wafer fabrication" />
+    <meta name="description" content="" />
+    <meta name="Author" content="" />
 
-		<!-- mobile settings -->
-		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 
-        <%- data.css %>
-	</head>
-	
-	<body class="smoothscroll">
+    <!-- WEB FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
 
-		<div id="wrapper">
+    <%- data.css %>
+</head>
 
-            <%- data.header %>
+<body class="smoothscroll boxed pattern11 printable">
+<div id="wrapper">
+    <%- data.header %>
 
-			<!-- CONTENT -->
-			<section>
-				<div class="container">
+    <!-- POPULAR -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="default-404"><i class="fa fa-file"></i> 404</span>
+                    <p class="text-center lead">We're sorry, but the page <%= url %> you were looking for doesn't exist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /POPULAR -->
 
-					<div class="row default-e404">
-					
-						<div class="col-md-12">
-						
-							<span class="default-404"><i class="fa fa-file"></i> 404</span>
-							<p class="text-center lead">We're sorry, but the page <%= url %> you were looking for doesn't exist.</p>
+    <!-- FOOTER -->
 
-						</div>
+    <%- data.footer %>
+    <!-- /FOOTER -->
 
-					</div>
+    <a href="#" id="toTop"></a>
 
-				</div>
-			</section>
-			<!-- /CONTENT -->
+</div><!-- /#wrapper -->
+<%- data.scripts %>
+</body>
 
-
-			<!-- FOOTER -->
-            <%- data.footer %>
-			<!-- /FOOTER -->
-
-			<a href="#" id="toTop"></a>
-
-		</div><!-- /#wrapper -->
-
-		<!-- JAVASCRIPT FILES -->
-        <%- data.scripts %>
-	</body>
 </html>
