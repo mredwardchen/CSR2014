@@ -1,7 +1,7 @@
 // usage
 // node server.js
 
-process.title = 'csr2014-website';
+process.title = 'csr2014-website-development';
 
 require('newrelic');
 

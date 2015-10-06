@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NODE_ENV=prod
+export NODE_ENV=development
 
-nohup nodejs ./server.js > ./logs/production.log 2>&1  &
+nohup nodejs ./server.js > ./logs/development.log 2>&1  &
 
