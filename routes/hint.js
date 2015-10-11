@@ -88,6 +88,7 @@ function hint (req, res, config) {
             var d = new Date();
             data['timestamp'] = d.toString();
             console.log('hint==>'+JSON.stringify(data));
+            console.log('\n');
         } catch(err) {}
     } catch(err) {}
 
