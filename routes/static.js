@@ -64,7 +64,7 @@ module.exports = function (req, res, config) {
     } else if (req.url.indexOf('/subscription') === 0) {
         params.magic = parseInt(Math.random()*9000+1000);
         subscription(req, res, {data: params});
-    } else if (req.url.indexOf('/csrhint') === 0) {
+    } else if (req.url.indexOf('/oldy') === 0) {
         hint(req, res, config);
         res.end();
     } else if (req.url && req.url.indexOf('/captcha.png?') === 0) {

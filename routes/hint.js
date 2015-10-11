@@ -6,8 +6,8 @@ var geoip = require('geoip-lite');
 var UAParser = require('ua-parser-js');
 var parser = new UAParser();
 var querystring = require('querystring');
-var GoogleSpreadsheet = require("google-spreadsheet");
-var my_sheet = new GoogleSpreadsheet('1VBxir1Gbrgfe3h5Q9deTr52Uh-IkqjfWJ_2VhHnZH-0');
+//var GoogleSpreadsheet = require("google-spreadsheet");
+//var my_sheet = new GoogleSpreadsheet('1VBxir1Gbrgfe3h5Q9deTr52Uh-IkqjfWJ_2VhHnZH-0');
 
 
 module.exports = hint;
@@ -15,8 +15,6 @@ module.exports = hint;
 // hint service for tagger requests
 
 function hint (req, res, config) {
-
-    return;
 
     var data = {};
     var cookies = req.headers['cookie'] ? req.headers['cookie'] : 'NA';
@@ -87,26 +85,9 @@ function hint (req, res, config) {
 
 
         try {
-            my_sheet.setAuth('pp238248@gmail.com','hell0k1tty', function(err){
-                if (err) {
-                    console.log('** Err:'+err);
-                    return;
-                }
-
-                //console.log(' GOOGLE AUTH SUCCESS!' );
-
-                // timestamp
-                var d = new Date();
-                var wsID = d.getMonth() + 1;
-                data['timestamp'] = d.toString();
-                my_sheet.addRow(wsID, data, function(err, status){
-                  if (err) {
-                    console.error(err);
-                  } else {
-                    //console.log('hint recorded');
-                  }
-                });
-             });
+            var d = new Date();
+            data['timestamp'] = d.toString();
+            console.log('hint==>'+JSON.stringify(data));
         } catch(err) {}
     } catch(err) {}
 
