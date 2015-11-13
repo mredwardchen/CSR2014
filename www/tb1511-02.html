@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Chip Scale Review - The International Magazine for Device and Wafer-Level Test, Assembly, and Packaging Addressing High-density Interconnection of Microelectronic IC's including 3D packages, MEMS, MOEMS, RF/Wireless, Optoelectronic and Other Wafer-fabricated Devices for the 21st Century</title>
+    <meta name="keywords" content="Chip Scale Review Magazine, Device test, Wafer-Level Test, wafer Assembly, wafer Packaging, High-density Interconnection, Microelectronic, IC, 3D packages, MEMS, MOEMS, RF/Wireless, Optoelectronic, semiconductor, wafer manufacturing, wafer fabrication" />
+    <meta name="description" content="" />
+    <meta name="Author" content="" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <!-- WEB FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+    <%- data.css %>
+</head>
+
+<body class="smoothscroll boxed pattern11 printable">
+
+<div id="wrapper">
+    <%- data.header %>
+
+    <!-- PAGE TOP -->
+    <section class="page-title">
+        <div class="container">
+            <header>
+
+
+                <h2><!-- Page Title -->
+                    Tech Briefs
+                </h2><!-- /Page Title -->
+            </header>
+        </div>
+    </section>
+
+    <!-- /PAGE TOP -->
+
+
+    <!-- POPULAR -->
+    <section>
+        <div class="container">
+            <h4><strong>November</strong> 2015</h4>       <br>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <h3>  Bosch Sensortec enables sensor fusion with new sensor+software development package
+
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h4>
+                                by Debra Vogler, Senior Technical Editor
+                            </h4>    <br>
+
+
+
+                            <div class="col-md-3" style="padding-left: 0px; padding-top: 10px;"><!-- category -->
+                                <div class="box-content thumbnail text-center" style="display: inline;margin-bottom: 0px;">
+                                    <img class="pull-left" src="assets/images/tb/2015-11/Divya-Thukkaram.jpg" width="160" alt="">
+                                    <div class="caption text-left" style="padding: 0px;"><!-- name -->
+                                        <h6 class="nomargin">Divya Thukkaram, Product Manager, Bosch Sensortec </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                              <p style="text-indent:15px;">
+
+                                  Bosch Sensortec recently announced the release of a compact 9-axis motion sensor — the BMF055 —
+
+                                  along with a software development package that enables customized sensor systems to be programmed
+
+                                  for specific applications. The new sensor is part of the company’s  Application-Specific Sensor Node
+
+                                  (ASSN) family and combines an accelerometer, a gyroscope and a magnetometer with a Cortex M0+
+
+                                  processor from Atmel’s SAMD20 microcontroller family. The device is in a 5.2 x 3.8 x 1.1mm<sup>3</sup> package.
+
+                                  The company says that the new sensor is well suited to the needs of users developing advanced
+
+                                  application-specific sensor fusion algorithms, adding sophisticated motion sensing capabilities, and
+
+                                  replacing multiple discrete components with a single package. Among the market segments being
+
+                                  targeted are robotics, gaming, remote controls, navigation systems, drones, and human interface devices
+
+                                  for Internet of Things (IoT) projects.
+                                    </p><p style="text-indent:15px;">
+
+                                  The software development package includes a precompiled BSX Lite fusion library with integration
+
+                                  guidelines, API source files for individual sensors and example projects as a plugin for Atmel Studio. The
+
+                                  Atmel toolchain can be downloaded from Atmel’s website. The company noted that this software
+
+                                  development package will enable end users to develop their own application-specific firmware for the
+
+                                  BMF055 sensor without requiring an additional application processor.
+
+                                    </p><p style="text-indent:15px;">
+                                  <i>Chip Scale Review</i> asked Divya Thukkaram, Product Manager at Bosch Sensortec, to discuss some of
+
+                                  the requirements and challenges the company had to address to develop the new sensor, and to provide
+
+                                  context for it within the ASSN family. “The target was to build an ASSN small enough to fit into wearables
+
+                                  and IoT devices,” Thukkaram told <i>CSR</i>. “The BNO055 delivers fused orientation data that is required by
+
+                                  many IoT and wearable applications, while the BMF055 is the flexible programmable version of the
+
+                                  BNO055.”   </p>
+
+
+
+                            <div class="col-md-6" style="padding-left: 0px; padding-top: 10px"><!-- category -->
+                                <div class="box-content thumbnail text-center"
+                                     style="display: inline;margin-bottom: 0px;">
+                                    <img class="pull-left" src="assets/images/tb/2015-11/Figure-1.jpg" width="500"
+                                         alt="">
+
+                                    <div class="caption text-left" style="padding: 0px;"><!-- name -->
+                                        <h6 class="nomargin"><b>Figure 1</b>
+                                            : The BMF055 sensor </h6>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                             <p style="text-indent:15px;">
+                                 Regarding the technical challenges that had to be overcome to meet the customized SiP requirements of
+
+                                 the new sensor’s package, Thukkaram said that the big challenge for the hardware was the integration of
+
+                                 six different chips with more than 90 bond wires in one single package. “The duration and complexity of
+
+                                 the product qualification rise together with the integration of increasing hardware components,” said
+
+                                 Thukkaram. “Of course, the software development was also a big challenge, first of all because of the
+
+                                 complexity of the fusion algorithms, and certainly also due to the flexibility we set as a target from the very
+
+                                 beginning.” Thukkaram further noted  that an advantage of the sensor and the software development
+
+                                 package is that the device takes care of the complete sensor fusion, “so the designer can concentrate on
+
+                                 the application development.” She added that the industry trend is to further miniaturize package
+
+                                 technology and integrate more sensors into an SiP package to meet the requirements of wearable
+
+                                 devices, as well as IoT applications.</p>
+                        </div>
+                    </div>
+
+                    <br>
+                    <hr class="quarter-margins">
+
+
+
+
+                        <img class="pull-left" src="assets/images/staff-editor/Debra_Vogler.jpg" width="105" alt="" />
+
+                        The new Tech News section will be featuring select quotes, commentary, and data based on questions posed to industry technologists by our senior technical editor, Debra Vogler. If your company has significant technical news to announce and you’re invited to participate in these interviews, be prepared to discuss the science behind your latest breakthrough, the R&D challenges that had to be solved along the way, and the industry challenges driving the need for the technology. Send your technology news releases to  <a href="mailto:editor@chipscalereview.com" class="link">editor@chipscalereview.com</a>  <br>
+
+
+                    <hr class="quarter-margins">
+
+
+                    <!-- pagination -->
+                    <div class="text-center">
+
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+
+                            <li><a href="tb1511-01.html"> Next &nbsp;&raquo; </a></li>
+
+                        </ul>
+                    </div>
+                    <!-- /pagination -->
+                </div>
+                <div class="col-md-3">
+                    <%- data.ads %>
+
+                    <hr class="half-margins invisible" />
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- /POPULAR -->
+
+    <!-- FOOTER -->
+
+    <%- data.footer %>
+    <!-- /FOOTER -->
+
+    <a href="#" id="toTop"></a>
+
+</div>
+<!-- /#wrapper -->
+<%- data.scripts %>
+</body>
+</html>
