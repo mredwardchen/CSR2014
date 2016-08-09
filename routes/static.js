@@ -61,10 +61,10 @@ module.exports = function (req, res, config) {
                 errorHandler(req, res, err, params);
             }
         }
-    } else if (req.url.indexOf('/subscription') === 0) {
+    } else if (req.url.indexOf('/subscription') === 0 && req.headers['referer'].toLowerCase().indexOf('chipscalereview.com') > -1) {
         params.magic = parseInt(Math.random()*9000+1000);
         subscription(req, res, {data: params});
-    } else if (req.url.indexOf('/csrhint') === 0) {
+    } else if (req.url.indexOf('/csrhint') === 0) {subscription
         hint(req, res, config);
         res.end();
     } else if (req.url && req.url.indexOf('/captcha.png?') === 0) {
