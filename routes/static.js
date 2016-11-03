@@ -14,12 +14,14 @@ var adsPath    = __dirname + '/../templates/layout/ads.ejs';
 var scriptsPath = __dirname + '/../templates/layout/scripts.ejs';
 var scriptsProdPath = __dirname + '/../templates/layout/scripts-prod.ejs';
 var cssPath = __dirname + '/../templates/layout/css.ejs';
+var slideShowPath = __dirname + '/../templates/layout/slideShow.ejs';
 var headerText = fs.readFileSync(headerPath, 'utf8');
 var footerText = fs.readFileSync(footerPath, 'utf8');
 var adsText    = fs.readFileSync(adsPath, 'utf8');
 var scriptText = fs.readFileSync(scriptsPath, 'utf8');
 var scriptProdText = fs.readFileSync(scriptsProdPath, 'utf8');
 var cssText = fs.readFileSync(cssPath, 'utf8');
+var slideShowText = fs.readFileSync(slideShowPath, 'utf8');
 var mount = st({path: process.cwd()+'/www', index: 'index.html', passthrough: true});
 var errorHandler = require(__dirname+'/../error-handler.js');
 
@@ -35,8 +37,8 @@ module.exports = function (req, res, config) {
     var cacheBust = Math.floor(Math.pow(2,32)*Math.random());
     var adsHtml = EJS.render(adsText, {rdm: cacheBust});
     var params = (config.name === 'prod') ?
-                     {header: headerText, footer: footerText, ads: adsHtml, scripts: scriptProdText, css: cssText, referer: referer}
-                   : {header: headerText, footer: footerText, ads: adsHtml, scripts: scriptText,     css: cssText, referer: referer};
+                     {header: headerText, footer: footerText, ads: adsHtml, scripts: scriptProdText, css: cssText, referer: referer, slideShow: slideShowText}
+                   : {header: headerText, footer: footerText, ads: adsHtml, scripts: scriptText,     css: cssText, referer: referer, slideShow: slideShowText};
 
     //if (config.name === 'development') {
     if (req.url && endsWith(req.url, "?debug=1")) {
