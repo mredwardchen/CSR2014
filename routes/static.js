@@ -46,6 +46,7 @@ module.exports = function (req, res, config) {
         console.log('req.url:'+req.url);
     }
 
+    var method = req.method;
     if (!req.url || (endsWith(req.url, ".html") || req.url === '/')) {
 
         htmlPath = (req.url === '/') ? '/index.html' : req.url;
@@ -63,7 +64,8 @@ module.exports = function (req, res, config) {
                 errorHandler(req, res, err, params);
             }
         }
-    } else if (req.url.indexOf('/subscription') === 0 && req.headers['referer'].toLowerCase().indexOf('chipscalereview.com') > -1) {
+    } else if (req.url.indexOf('/subscription') === 0 
+              && (method === "GET" || (method === "POST" && req.headers['referer'].toLowerCase().indexOf('chipscalereview.com') > -1))) {
         params.magic = parseInt(Math.random()*9000+1000);
         subscription(req, res, {data: params});
     } else if (req.url.indexOf('/csrhint') === 0) {
